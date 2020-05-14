@@ -63,7 +63,6 @@ Gson gson = new Gson();
             users U = new users();
             U.setUserame(rs.getString("username"));
             U.setPassword(rs.getString("password"));
-            
 
             list.add (U);
             
