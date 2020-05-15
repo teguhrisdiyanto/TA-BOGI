@@ -10,6 +10,7 @@ package com.TA.models;
  * @author teguh
  */
 public class users {
+    private int id_user;
     private String userame;
     private String password;
 
