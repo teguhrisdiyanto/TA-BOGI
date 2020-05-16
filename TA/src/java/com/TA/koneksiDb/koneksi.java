@@ -18,7 +18,7 @@ public class koneksi {
         Connection connect;
         try{
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            connect=DriverManager.getConnection("jdbc:mysql://localhost:3306/ta_bogi","root","");
+            connect=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_pandu","root","");
             return connect;
         }
         catch(Exception exc){

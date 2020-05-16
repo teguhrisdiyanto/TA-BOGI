@@ -5,7 +5,7 @@
  */
 package Controllers;
 
-import com.TA.Dao.userDaoImpl;
+import com.TA.Dao.impl.userDaoImpl;
 import com.TA.models.users;
 import java.io.IOException;
 import java.io.PrintWriter;

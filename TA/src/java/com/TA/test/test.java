@@ -5,7 +5,7 @@
  */
 package com.TA.test;
 
-import com.TA.Dao.userDaoImpl;
+import com.TA.Dao.impl.userDaoImpl;
 import com.TA.models.users;
 import com.google.gson.Gson;
 import java.sql.SQLException;
