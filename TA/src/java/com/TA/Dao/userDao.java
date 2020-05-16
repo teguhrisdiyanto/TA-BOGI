@@ -14,9 +14,9 @@ import java.util.List;
  */
 public interface userDao<A> {
     
-public void insert (A object);
-public void update (A object);
-public void delete (String id);
+public int insert (A object, String username);
+public int update (A object);
+public int delete (int id);
 public users username (String username);
 public int autonumber(A object);
 
