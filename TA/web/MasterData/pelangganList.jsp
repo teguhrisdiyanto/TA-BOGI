@@ -44,12 +44,12 @@
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
                 <tr>
-                  <th>id_pelanggan</th>
-                  <th>pelanggan_nama</th>
-                  <th>pelanggan_alamat</th>
-                  <th>pelanggan_nohp</th>
-                  <th>pelanggan_email</th>
-                  <th>pelanggan_pekerjaan</th>
+                   <th>ID Pelanggan</th>
+                  <th>Nama Pelanggan</th>
+                  <th>Alamat Pelanggan</th>
+                  <th>Nomor Telepon</th>
+                  <th>E-Mail</th>
+                  <th>Pekerjaan</th>
                   <th>Aksi</th>
                 </tr>
          <%
