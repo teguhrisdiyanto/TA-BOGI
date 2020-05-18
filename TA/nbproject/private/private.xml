@@ -3,13 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/TABOGI/TA/src/java/Controllers/Logout.java</file>
-            <file>file:/D:/TABOGI/TA/src/java/Controllers/LoginController.java</file>
+            <file>file:/D:/TABOGI/TA/web/MasterData/lokasiList.jsp</file>
+            <file>file:/D:/TABOGI/TA/src/java/com/TA/Dao/impl/pelangganDaoImpl.java</file>
+            <file>file:/D:/TABOGI/TA/src/java/Controllers/Masterdata/lokasiController.java</file>
+            <file>file:/D:/TABOGI/TA/web/MasterData/pelangganList.jsp</file>
+            <file>file:/D:/TABOGI/TA/web/MasterData/jenisbangunan.jsp</file>
+            <file>file:/D:/TABOGI/TA/src/java/com/TA/enkripsi/AES.java</file>
+            <file>file:/D:/TABOGI/TA/src/java/Controllers/Masterdata/PelangganController.java</file>
+            <file>file:/D:/TABOGI/TA/src/java/com/TA/test/pelanggan/testGetAll.java</file>
+            <file>file:/D:/TABOGI/TA/src/java/Controllers/Masterdata/jenisBangunanController.java</file>
+            <file>file:/D:/TABOGI/TA/src/java/com/TA/models/lokasi.java</file>
             <file>file:/D:/TABOGI/TA/web/Home.jsp</file>
-            <file>file:/D:/TABOGI/TA/src/java/com/TA/Dao/userDaoImpl.java</file>
-            <file>file:/D:/TABOGI/TA/web/login_gagal.jsp</file>
-            <file>file:/D:/TABOGI/TA/web/Login.jsp</file>
-            <file>file:/D:/TABOGI/TA/src/java/Controllers/Dashboard.java</file>
+            <file>file:/D:/TABOGI/TA/web/MasterData/pelangganadd.jsp</file>
         </group>
     </open-files>
 </project-private>

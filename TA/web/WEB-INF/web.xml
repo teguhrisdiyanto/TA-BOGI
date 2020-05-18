@@ -15,6 +15,18 @@
         <servlet-name>Logout</servlet-name>
         <servlet-class>Controllers.Logout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Pelanggan</servlet-name>
+        <servlet-class>Controllers.Masterdata.PelangganController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>jenisBangunan</servlet-name>
+        <servlet-class>Controllers.Masterdata.jenisBangunanController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>lokasiController</servlet-name>
+        <servlet-class>Controllers.Masterdata.lokasiController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/LoginController</url-pattern>
@@ -26,6 +38,18 @@
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Pelanggan</servlet-name>
+        <url-pattern>/Pelanggan</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>jenisBangunan</servlet-name>
+        <url-pattern>/jenisBangunan</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>lokasiController</servlet-name>
+        <url-pattern>/lokasiController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

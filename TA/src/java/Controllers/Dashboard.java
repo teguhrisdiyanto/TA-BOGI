@@ -42,6 +42,7 @@ public class Dashboard extends HttpServlet {
             
             if (username != null){
                   request.setAttribute("session", username);
+                  request.setAttribute("page", "dashboard");
                   rd = request.getRequestDispatcher("Home.jsp");
                   rd.forward(request, response);
                 

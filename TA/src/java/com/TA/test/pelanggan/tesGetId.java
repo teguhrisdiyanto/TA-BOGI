@@ -6,6 +6,7 @@
 package com.TA.test.pelanggan;
 
 import com.TA.Dao.impl.pelangganDaoImpl;
+import com.TA.enkripsi.AES;
 import com.TA.models.pelanggan;
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -38,7 +39,7 @@ public class tesGetId {
      
      
         System.out.println("ini id :" + idpel);
-        System.out.println("ini nama :" + nama);
+        System.out.println("ini nama :" + AES.decrypt(nama));
         System.out.println("ini alamat :" + alamat);
         System.out.println("ini nohp :" + nohp);
         System.out.println("ini email :" + email);
