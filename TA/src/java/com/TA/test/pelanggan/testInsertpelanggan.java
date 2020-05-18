@@ -6,6 +6,7 @@
 package com.TA.test.pelanggan;
 
 import com.TA.Dao.impl.pelangganDaoImpl;
+import com.TA.enkripsi.AES;
 import com.TA.models.pelanggan;
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -44,12 +45,13 @@ public class testInsertpelanggan {
          System.out.print("pekerjaan: ");
          pelanggan_pekerjaan = keyboard2.nextLine();
          
+        
          plu.setId_pelanggan(a);
-         plu.setPelanggan_nama(pelanggan_nama);
-         plu.setPelanggan_alamat(pelanggan_alamat);
-         plu.setPelanggan_nohp(pelanggan_nohp);
-         plu.setPelanggan_email(pelanggan_email);
-         plu.setPelanggan_pekerjaan(pelanggan_pekerjaan);
+         plu.setPelanggan_nama(AES.encrypt(pelanggan_nama));
+         plu.setPelanggan_alamat(AES.encrypt(pelanggan_alamat));
+         plu.setPelanggan_nohp(AES.encrypt(pelanggan_nohp));
+         plu.setPelanggan_email(AES.encrypt(pelanggan_email));
+         plu.setPelanggan_pekerjaan(AES.encrypt(pelanggan_pekerjaan));
          
          
          int status = insert.insert(plu);

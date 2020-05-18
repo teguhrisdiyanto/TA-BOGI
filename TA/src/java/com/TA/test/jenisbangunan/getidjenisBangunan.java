@@ -11,7 +11,6 @@ import com.TA.test.lokasi.*;
 import com.TA.Dao.impl.lokasiDaoImpl;
 import com.TA.models.jenisBangunan;
 import com.TA.models.lokasi;
-import com.sun.istack.internal.Pool.Impl;
 import java.sql.SQLException;
 import java.util.Scanner;
 

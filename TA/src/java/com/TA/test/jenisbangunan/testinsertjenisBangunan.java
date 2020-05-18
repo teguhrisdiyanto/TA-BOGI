@@ -15,6 +15,7 @@ import java.util.Scanner;
  *
  * @author teguh
  */
+/**/
 public class testinsertjenisBangunan {
     
     public static void main(String []args) throws SQLException{
