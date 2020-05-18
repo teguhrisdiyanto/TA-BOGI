@@ -38,18 +38,18 @@
             <div class="box-body table-responsive no-padding">
               <form class="form-horizontal" id="form1" name="form1" method="post" action="Pelanggan?go=pelanggan_save">
               <div class="box-body">
-                     <div class="alert alert-success alert-dismissible se-pre-conberhasil">
+               <div class="alert alert-success alert-dismissible se-pre-conberhasil">
                        
                           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                          <h4><i class="icon fa fa-check"></i> Selamat!</h4>
-                         Bogi Ganteng Telah berhasil input Data.
+                          <h4><i class="icon fa fa-check"></i> Selamat !</h4>
+                         Data Telah berhasil Di Input
                          
                         </div>
                   
                    <div class="alert alert-danger alert-dismissible se-pre-congagal">
                           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                          <h4><i class="icon fa fa-check"></i> Alert!</h4>
-                          Success alert preview. This alert is dismissable.
+                          <h4><i class="icon fa fa-check"></i> Peringatan !</h4>
+                          DATA GAGAL DI INPUT
                         </div>
                   
                   
