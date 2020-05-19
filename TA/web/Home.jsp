@@ -213,6 +213,12 @@ else if (halaman.equals("pelangganadd")) {
 <%@ include file="MasterData/pelangganadd.jsp"%>
 <% }
 
+else if (halaman.equals("pelangganedit")) {
+%>
+
+<%@ include file="MasterData/pelangganedit.jsp"%>
+<% }
+
 %>
 
     <!-- /.content -->

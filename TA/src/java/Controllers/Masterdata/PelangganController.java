@@ -42,13 +42,15 @@ public class PelangganController extends HttpServlet {
              PrintWriter out = response.getWriter();
       RequestDispatcher rd;
         try {
+             pelanggan plu = new pelanggan();
+             pelangganDaoImpl pel = new pelangganDaoImpl();
             String username = (String) request.getSession().getAttribute("username");
             String link = request.getParameter("go");
             
             if (username != null){
                 
                 if(link.equals("list")){
-                    pelangganDaoImpl pel = new pelangganDaoImpl();
+                   
                 List<pelanggan> list;
                 List<pelanggan> list2 = new ArrayList<>();
                 list = pel.getAll();
@@ -93,17 +95,17 @@ public class PelangganController extends HttpServlet {
                     System.out.println("no hp :" + nohp);
                     System.out.println("email :" + email);
                     System.out.println("pekerjaan :" + pekerjaan);
-                     pelanggan plu = new pelanggan();
-                    pelangganDaoImpl insert = new pelangganDaoImpl();
-                    int a = insert.autonumber(plu);
                     
-                         plu.setId_pelanggan(a);
+                    
+                    int a = pel.autonumber(plu);
+                    
+                        plu.setId_pelanggan(a);
                         plu.setPelanggan_nama(AES.encrypt(nama));
                         plu.setPelanggan_alamat(AES.encrypt(alamat));
                         plu.setPelanggan_nohp(AES.encrypt(nohp));
                         plu.setPelanggan_email(AES.encrypt(email));
                         plu.setPelanggan_pekerjaan(AES.encrypt(pekerjaan));
-                         int status = insert.insert(plu);
+                         int status = pel.insert(plu);
                          
                          if (status == 0){
                                 System.out.println("data gagal di input");
@@ -121,7 +123,71 @@ public class PelangganController extends HttpServlet {
                  rd.forward(request, response);
                 
                 
+                }else if(link.equals("pelanggan_edit")){
+                String pelanggan_id = request.getParameter("pelanggan_id");
+                System.out.println("ini id : " + pelanggan_id);
+                int id = Integer.parseInt(pelanggan_id);
+                pelanggan pl = new pelanggan();    
+                
+                
+                pl = pel.getbyid(id);
+                
+                request.setAttribute("id", pelanggan_id);
+                request.setAttribute("namapelanggan", AES.decrypt(pl.getPelanggan_nama()));
+                request.setAttribute("alamatpelanggan", AES.decrypt(pl.getPelanggan_alamat()));
+                request.setAttribute("notlp", AES.decrypt(pl.getPelanggan_nohp()));
+                request.setAttribute("emailpelanggan", AES.decrypt(pl.getPelanggan_email()));
+                request.setAttribute("pekerjaan", AES.decrypt(pl.getPelanggan_pekerjaan()));
+                
+                request.setAttribute("session", username);
+                request.setAttribute("page", "pelangganedit");
+                rd = request.getRequestDispatcher("Home.jsp");
+                 rd.forward(request, response);
+                
+                }else if(link.equals("pelanggan_editsave")){
+                    String idpel = request.getParameter("pelid");
+                    String nama = request.getParameter("namapelanggan");
+                    String alamat = request.getParameter("alamatpelanggan");
+                    String nohp = request.getParameter("nohp");
+                    String email = request.getParameter("emailpelanggan");
+                    String pekerjaan = request.getParameter("pekerjaan") ;
+                    String Statusdata = null;
+                    int id = Integer.parseInt(idpel);
+                    System.out.println("id :" + id);
+                    System.out.println("nama :" + nama);
+                    System.out.println("Alamat :" + alamat);
+                    System.out.println("no hp :" + nohp);
+                    System.out.println("email :" + email);
+                    System.out.println("pekerjaan :" + pekerjaan);
+                    
+                        plu.setId_pelanggan(id);
+                        plu.setPelanggan_nama(AES.encrypt(nama));
+                        plu.setPelanggan_alamat(AES.encrypt(alamat));
+                        plu.setPelanggan_nohp(AES.encrypt(nohp));
+                        plu.setPelanggan_email(AES.encrypt(email));
+                        plu.setPelanggan_pekerjaan(AES.encrypt(pekerjaan));
+                        int status = pel.update(plu);
+                        
+                    if (status == 0){
+                                System.out.println("data gagal di Update");
+                                Statusdata = "01";
+
+                            }else{
+
+                                System.out.println("data berhasi di Update");
+                                Statusdata = "00";
+                            }
+                    
+                    
+                 request.setAttribute("session", username);
+                 request.setAttribute("statusdata", Statusdata);
+                 request.setAttribute("page", "pelangganedit");
+                 rd = request.getRequestDispatcher("Home.jsp");
+                 rd.forward(request, response);
+                
                 }
+                
+                
                 
             
             }else{
