@@ -82,9 +82,8 @@
                  
                   
                         <td>
-                            <a href="">  <span class="label label-warning">Rubah</span> </a>
+                           <a href="Pelanggan?go=pelanggan_edit&amp;pelanggan_id=<%=id_pelanggan%>">  <span class="label label-warning">Rubah</span> </a>
                             <a href="">  <span class="label label-danger">Hapus</span> </a>
-             
                         </td>                                 
 
                 </tr>
