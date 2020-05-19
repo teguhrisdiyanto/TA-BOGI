@@ -12,14 +12,8 @@
 <section class="content-header">
          <% ArrayList jenisbangunanlist = (ArrayList)request.getAttribute("listjenisbangunan"); %>
       <h1>
-        Simple Tables
-        <small>preview of simple tables</small>
+        CV Pandu Putra Sarana
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Simple</li>
-      </ol>
     </section>
 
     <section class="content">
@@ -28,11 +22,11 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Data Pelanggan</h3>
+              <h3 class="box-title">Data Jenis Bangunan</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                  <button type="button" onclick="window.location.href='Karyawan?go=karyawan_add'  "class="btn btn-block btn-primary btn-sm"> <i class="fa fa-user-plus"></i> Add</button>
+                  <button type="button" onclick="window.location.href='Karyawan?go=karyawan_add'  "class="btn btn-block btn-primary btn-sm"> <i class="fa fa-user-plus"></i>Tambah</button>
                 </div>
               </div>
             </div>
@@ -40,8 +34,8 @@
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
                 <tr>
-                  <th>id_jenis</th>
-                  <th>jenis_Bangunan</th>
+                  <th>ID Jenis</th>
+                  <th>Jenis Bangunan</th>
                   <th>Aksi</th>
                 </tr>
          <%
