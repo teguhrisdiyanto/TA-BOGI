@@ -9,14 +9,8 @@
 <section class="content-header">
       
       <h1>
-        Simple Tables
-        <small>preview of simple tables</small>
+        CV Pandu Putra Sarana
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Simple</li>
-      </ol>
     </section>
 
     <section class="content">
@@ -83,7 +77,7 @@
                     
                   <div class="input-group input-group-sm">
                   <div class="col-sm-12">
-                     <input type="text" class="form-control"  name="nohp"  id="datemask" size="40" maxlength="35" value="${tanggalLahir}" placeholder="no Hp" required/>
+                     <input type="text" class="form-control"  name="nohp"  id="datemask" size="40" maxlength="35" value="${tanggalLahir}" placeholder="No Hp" required/>
                   </div>
                   </div>
                 </div>
@@ -92,7 +86,7 @@
                     
                   <div class="input-group input-group-sm">
                   <div class="col-sm-12">
-                    <input type="email" class="form-control" name="emailpelanggan"  id="phone" size="40" maxlength="20" value="${emailKaryawan}" placeholder="Ex : bogibobogi@gmail.com" required />
+                    <input type="email" class="form-control" name="emailpelanggan"  id="phone" size="40" maxlength="20" value="${emailKaryawan}" placeholder="Ex : bogi.bobogi@gmail.com" required />
                   </div>
                   </div>
                 </div>
@@ -103,7 +97,7 @@
                     
                   <div class="input-group input-group-sm">
                   <div class="col-sm-12">
-                    <input type="text" class="form-control" name="pekerjaan"  id="nmkategoritxt" size="40" maxlength="15" value="${noTlp}" placeholder="pekerjaan" required  onkeypress="return onlyNumberKey(event)"/>
+                    <input type="text" class="form-control" name="pekerjaan"  id="nmkategoritxt" size="40" maxlength="15" value="${noTlp}" placeholder="Pekerjaan" required  onkeypress="return onlyNumberKey(event)"/>
                   </div>
                   </div>
                 </div>

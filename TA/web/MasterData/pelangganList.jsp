@@ -15,14 +15,8 @@
   <section class="content-header">
          <% ArrayList pelangganlist = (ArrayList)request.getAttribute("listpelanggan"); %>
       <h1>
-        Simple Tables
-        <small>preview of simple tables</small>
+        CV Pandu Putra Sarana
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Simple</li>
-      </ol>
     </section>
 
     <section class="content">
@@ -35,7 +29,7 @@
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                  <button type="button" onclick="window.location.href='Pelanggan?go=pelanggan_add'  "class="btn btn-block btn-primary btn-sm"> <i class="fa fa-user-plus"></i> Add</button>
+                  <button type="button" onclick="window.location.href='Pelanggan?go=pelanggan_add'  "class="btn btn-block btn-primary btn-sm"> <i class="fa fa-user-plus"></i>Tambah</button>
 
                 </div>
               </div>
