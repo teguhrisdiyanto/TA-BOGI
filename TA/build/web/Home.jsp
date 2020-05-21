@@ -150,7 +150,7 @@
           <ul class="treeview-menu">
             <li><a href="Pelanggan?go=list"><i class="fa fa-user"></i> Pelanggan</a></li>
             <li><a href="jenisBangunan?go=list"><i class="fa fa-hospital-o"></i> Jenis Bangunan</a></li>
-            <li><a href="lokasiController"><i class="fa fa-map"></i> Lokasi</a></li>
+            <li><a href="lokasiController?go=list"><i class="fa fa-map"></i> Lokasi</a></li>
            
           </ul>
         </li>
@@ -199,13 +199,13 @@ else if (halaman.equals("pelanggan")) {
 else if (halaman.equals("jenisbangunan")) {
 %>
 
-<%@ include file="MasterData/Jenisbangunan/jenisbangunan.jsp"%>
+<%@ include file="MasterData/Jenisbangunan/jenisbangunanList.jsp"%>
 <% }
 
 else if (halaman.equals("lokasibangunan")) {
 %>
 
-<%@ include file="MasterData/lokasiList.jsp"%>
+<%@ include file="MasterData/Lokasi/lokasiList.jsp"%>
 <% }
 else if (halaman.equals("pelangganadd")) {
 %>
@@ -227,6 +227,17 @@ else if (halaman.equals("jenisbangunananedit")) {
 %>
 
 <%@ include file="MasterData/Jenisbangunan/jenisbangunanedit.jsp"%>
+<% }
+else if (halaman.equals("lokasidd")) {
+%>
+
+<%@ include file="MasterData/Lokasi/Lokasiadd.jsp"%>
+<% }
+
+else if (halaman.equals("lokasiedit")) {
+%>
+
+<%@ include file="MasterData/Lokasi/Lokasiedit.jsp"%>
 <% }
 
 %>
