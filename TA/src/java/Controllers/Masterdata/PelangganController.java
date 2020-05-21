@@ -185,6 +185,50 @@ public class PelangganController extends HttpServlet {
                  rd = request.getRequestDispatcher("Home.jsp");
                  rd.forward(request, response);
                 
+                }else if(link.equals("pelanggan_hapus")){
+                    String idpel = request.getParameter("pelanggan_id");
+                    String Statusdata = null;
+                    int id = Integer.parseInt(idpel);
+                    System.out.println("id :" + id);
+               
+                       
+                        int status = pel.delete(id);
+                        
+                    if (status == 0){
+                                System.out.println("data gagal di Update");
+                                Statusdata = "01";
+
+                            }else{
+
+                                System.out.println("data berhasi di Update");
+                                Statusdata = "00";
+                            }
+                List<pelanggan> list;
+                List<pelanggan> list2 = new ArrayList<>();
+                list = pel.getAll();
+               
+           
+                            for (pelanggan pl : list) {
+                             pelanggan png = new pelanggan();
+                                png.setId_pelanggan(pl.getId_pelanggan());              
+                                png.setPelanggan_nama(AES.decrypt(pl.getPelanggan_nama()));
+                                png.setPelanggan_alamat(AES.decrypt(pl.getPelanggan_alamat()));
+                                png.setPelanggan_nohp(AES.decrypt(pl.getPelanggan_nohp()));
+                                png.setPelanggan_email(AES.decrypt(pl.getPelanggan_email()));
+                                png.setPelanggan_pekerjaan(AES.decrypt(pl.getPelanggan_pekerjaan()));
+
+                            list2.add(png);
+                            }
+                         
+                    
+                    
+                 request.setAttribute("session", username);
+                 request.setAttribute("statusdata", Statusdata);
+                  request.setAttribute("listpelanggan", list2);
+                 request.setAttribute("page", "pelanggan");
+                 rd = request.getRequestDispatcher("Home.jsp");
+                 rd.forward(request, response);
+                
                 }
                 
                 

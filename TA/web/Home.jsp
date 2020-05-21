@@ -436,6 +436,10 @@ else if (halaman.equals("pelangganedit")) {
 <script src="bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+
+<script src="plugins/sweetalert2/sweetalert2.all.min.js"></script>
 <!-- Sparkline -->
 <script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
 <!-- jvectormap  -->
@@ -451,6 +455,30 @@ else if (halaman.equals("pelangganedit")) {
 <script src="dist/js/demo.js"></script>
 
 <script>
+          $('.tombol-hapus').on('click', function(e) {
+//            console.log("cobaaaaaaaa");
+//
+//        window.alert("test");
+        e.preventDefault();
+        const href = $(this).attr('href');
+
+        Swal.fire({
+            title: 'Apakah anda yakin ingin menghapus data ini',
+            text: "Data Akan Di Hapus!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus Data!'
+        }).then((result) => {
+            if (result.value) {
+
+                document.location.href = href;
+
+            }
+        })
+
+    });
     
     var statusdata = "<%= statuscodedaata  %>";
     console.log("ini status data : "+statusdata);
