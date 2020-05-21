@@ -149,7 +149,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="Pelanggan?go=list"><i class="fa fa-user"></i> Pelanggan</a></li>
-            <li><a href="jenisBangunan"><i class="fa fa-hospital-o"></i> Jenis Bangunan</a></li>
+            <li><a href="jenisBangunan?go=list"><i class="fa fa-hospital-o"></i> Jenis Bangunan</a></li>
             <li><a href="lokasiController"><i class="fa fa-map"></i> Lokasi</a></li>
            
           </ul>
@@ -193,13 +193,13 @@
 else if (halaman.equals("pelanggan")) {
 %>
 
-<%@ include file="MasterData/pelangganList.jsp"%>
+<%@ include file="MasterData/Pelanggan/pelangganList.jsp"%>
 <% }
 
 else if (halaman.equals("jenisbangunan")) {
 %>
 
-<%@ include file="MasterData/jenisbangunan.jsp"%>
+<%@ include file="MasterData/Jenisbangunan/jenisbangunan.jsp"%>
 <% }
 
 else if (halaman.equals("lokasibangunan")) {
@@ -210,13 +210,23 @@ else if (halaman.equals("lokasibangunan")) {
 else if (halaman.equals("pelangganadd")) {
 %>
 
-<%@ include file="MasterData/pelangganadd.jsp"%>
+<%@ include file="MasterData/Pelanggan/pelangganadd.jsp"%>
 <% }
 
 else if (halaman.equals("pelangganedit")) {
 %>
 
-<%@ include file="MasterData/pelangganedit.jsp"%>
+<%@ include file="MasterData/Pelanggan/pelangganedit.jsp"%>
+<% }
+else if (halaman.equals("jenisbangunanadd")) {
+%>
+
+<%@ include file="MasterData/Jenisbangunan/jenisbangunanadd.jsp"%>
+<% }
+else if (halaman.equals("jenisbangunananedit")) {
+%>
+
+<%@ include file="MasterData/Jenisbangunan/jenisbangunanedit.jsp"%>
 <% }
 
 %>
