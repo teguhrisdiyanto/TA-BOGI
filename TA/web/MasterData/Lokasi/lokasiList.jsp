@@ -26,10 +26,6 @@
                           <h4><i class="icon fa fa-check"></i> Peringatan !</h4>
                           DATA GAGAL DI Hapus
                         </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 2dad1d0c95faec0d36b9ac5bfbcbd98f4d0f967e
     </section>
 
     <section class="content">
