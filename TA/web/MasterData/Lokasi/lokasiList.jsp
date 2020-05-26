@@ -28,11 +28,7 @@
                           <h4><i class="icon fa fa-check"></i> Peringatan !</h4>
                           DATA GAGAL DI Hapus
                         </div>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Simple</li>
-      </ol>
+
     </section>
 
     <section class="content">
