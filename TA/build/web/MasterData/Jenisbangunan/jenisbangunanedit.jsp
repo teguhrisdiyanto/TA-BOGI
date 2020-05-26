@@ -49,12 +49,12 @@
                   
                   
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-4 control-label">Nama</label>
+                  <label for="inputEmail3" class="col-sm-4 control-label">Jenis Bangunan</label>
                    <input type="hidden" value="${id}" name="jenbangunid"/>
                   <div class="input-group input-group-sm">
                   <div class="col-sm-10">
                      <span class="input-group-btn">
-                         <input class="form-control" name="Jenisbangunan"  id="kode" type="text"  size="50" maxlength="25" placeholder="Nama"  value="${jenisbangunan}" required />
+                         <input class="form-control" name="Jenisbangunan"  id="kode" type="text"  size="50" maxlength="25" placeholder="Jenis Bangunan"  value="${jenisbangunan}" required />
                      
                     </span>
                   </div>

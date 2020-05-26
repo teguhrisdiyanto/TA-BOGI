@@ -12,9 +12,7 @@
  <section class="content-header">
          <% ArrayList pelangganlist = (ArrayList)request.getAttribute("listlokasi"); %>
       <h1>
-        Simple Tables
-        <small>preview of simple tables</small>
-        
+          CV Pandu Putra Sarana
       </h1>
                 <div class="alert alert-success alert-dismissible se-pre-conberhasil">
                        
@@ -28,11 +26,6 @@
                           <h4><i class="icon fa fa-check"></i> Peringatan !</h4>
                           DATA GAGAL DI Hapus
                         </div>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Simple</li>
-      </ol>
     </section>
 
     <section class="content">
@@ -45,7 +38,7 @@
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                  <button type="button" onclick="window.location.href='lokasiController?go=lokasi_add'  "class="btn btn-block btn-primary btn-sm"> <i class="fa fa-user-plus"></i> Add</button>
+                  <button type="button" onclick="window.location.href='lokasiController?go=lokasi_add'  "class="btn btn-block btn-primary btn-sm"> <i class="fa fa-user-plus"></i>Tambah</button>
 
                  
                 </div>
@@ -55,8 +48,8 @@
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
                 <tr>
-                  <th>id_lokasi</th>
-                  <th>Nama_lokasi</th>
+                  <th>ID Lokasi</th>
+                  <th>Nama Lokasi</th>
                   <th>Aksi</th>
                 </tr>
          <%
