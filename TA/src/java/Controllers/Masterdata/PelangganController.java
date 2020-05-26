@@ -42,88 +42,217 @@ public class PelangganController extends HttpServlet {
              PrintWriter out = response.getWriter();
       RequestDispatcher rd;
         try {
+             pelanggan plu = new pelanggan();
+             pelangganDaoImpl pel = new pelangganDaoImpl();
             String username = (String) request.getSession().getAttribute("username");
             String link = request.getParameter("go");
             
             if (username != null){
+                 String nama = null;
+                 String alamat = null;
+                 String nohp = null;
+                 String email = null;
+                 String pekerjaan = null ;
+                 String idpel = null;
+                 int status;
+                 int id;
+                 List<pelanggan> list;
+                 List<pelanggan> list2 = new ArrayList<>();
                 
-                if(link.equals("list")){
-                    pelangganDaoImpl pel = new pelangganDaoImpl();
-                List<pelanggan> list;
-                List<pelanggan> list2 = new ArrayList<>();
-                list = pel.getAll();
-               
-           
-                            for (pelanggan pl : list) {
-                             pelanggan png = new pelanggan();
-                                png.setId_pelanggan(pl.getId_pelanggan());              
-                                png.setPelanggan_nama(AES.decrypt(pl.getPelanggan_nama()));
-                                png.setPelanggan_alamat(AES.decrypt(pl.getPelanggan_alamat()));
-                                png.setPelanggan_nohp(AES.decrypt(pl.getPelanggan_nohp()));
-                                png.setPelanggan_email(AES.decrypt(pl.getPelanggan_email()));
-                                png.setPelanggan_pekerjaan(AES.decrypt(pl.getPelanggan_pekerjaan()));
-
-                            list2.add(png);
-                            }
-                         
-                
-                  request.setAttribute("session", username);
-                  request.setAttribute("page", "pelanggan");
-                  request.setAttribute("listpelanggan", list2);
-                  rd = request.getRequestDispatcher("Home.jsp");
-                  rd.forward(request, response);
-                
-                
-                }else if(link.equals("pelanggan_add")){
-                request.setAttribute("session", username);
-                request.setAttribute("page", "pelangganadd");
-                rd = request.getRequestDispatcher("Home.jsp");
-                 rd.forward(request, response);
-                
-                }
-                else if(link.equals("pelanggan_save")){
-                    String nama = request.getParameter("namapelanggan");
-                    String alamat = request.getParameter("alamatpelanggan");
-                    String nohp = request.getParameter("nohp");
-                    String email = request.getParameter("emailpelanggan");
-                    String pekerjaan = request.getParameter("pekerjaan") ;
-                    String Statusdata = null;
-                    System.out.println("nama :" + nama);
-                    System.out.println("Alamat :" + alamat);
-                    System.out.println("no hp :" + nohp);
-                    System.out.println("email :" + email);
-                    System.out.println("pekerjaan :" + pekerjaan);
-                     pelanggan plu = new pelanggan();
-                    pelangganDaoImpl insert = new pelangganDaoImpl();
-                    int a = insert.autonumber(plu);
+                switch(link){
                     
-                         plu.setId_pelanggan(a);
-                        plu.setPelanggan_nama(AES.encrypt(nama));
-                        plu.setPelanggan_alamat(AES.encrypt(alamat));
-                        plu.setPelanggan_nohp(AES.encrypt(nohp));
-                        plu.setPelanggan_email(AES.encrypt(email));
-                        plu.setPelanggan_pekerjaan(AES.encrypt(pekerjaan));
-                         int status = insert.insert(plu);
+                    case "list":
+                           
+                          
+                           list = pel.getAll();
+
+
+                                       for (pelanggan pl : list) {
+                                        pelanggan png = new pelanggan();
+                                           png.setId_pelanggan(pl.getId_pelanggan());              
+                                           png.setPelanggan_nama(AES.decrypt(pl.getPelanggan_nama()));
+                                           png.setPelanggan_alamat(AES.decrypt(pl.getPelanggan_alamat()));
+                                           png.setPelanggan_nohp(AES.decrypt(pl.getPelanggan_nohp()));
+                                           png.setPelanggan_email(AES.decrypt(pl.getPelanggan_email()));
+                                           png.setPelanggan_pekerjaan(AES.decrypt(pl.getPelanggan_pekerjaan()));
+
+                                       list2.add(png);
+                                       }
+
+
+                             request.setAttribute("session", username);
+                             request.setAttribute("page", "pelanggan");
+                             request.setAttribute("listpelanggan", list2);
+                             rd = request.getRequestDispatcher("Home.jsp");
+                             rd.forward(request, response);
+
+                            break;
+                    
+                    case "pelanggan_add":
+                        
+                        request.setAttribute("session", username);
+                        request.setAttribute("page", "pelangganadd");
+                        rd = request.getRequestDispatcher("Home.jsp");
+                        rd.forward(request, response);
+                        
+                            break;
+                    
+                    case "pelanggan_save":
+                        
+                            nama = request.getParameter("namapelanggan");
+                            alamat = request.getParameter("alamatpelanggan");
+                            nohp = request.getParameter("nohp");
+                            email = request.getParameter("emailpelanggan");
+                            pekerjaan = request.getParameter("pekerjaan") ;
+                            String Statusdata = null;
+                            System.out.println("nama :" + nama);
+                            System.out.println("Alamat :" + alamat);
+                            System.out.println("no hp :" + nohp);
+                            System.out.println("email :" + email);
+                            System.out.println("pekerjaan :" + pekerjaan);
+
+
+                            int a = pel.autonumber(plu);
+
+                                plu.setId_pelanggan(a);
+                                plu.setPelanggan_nama(AES.encrypt(nama));
+                                plu.setPelanggan_alamat(AES.encrypt(alamat));
+                                plu.setPelanggan_nohp(AES.encrypt(nohp));
+                                plu.setPelanggan_email(AES.encrypt(email));
+                                plu.setPelanggan_pekerjaan(AES.encrypt(pekerjaan));
+                                status = pel.insert(plu);
+
+                                 if (status == 0){
+                                        System.out.println("data gagal di input");
+                                        Statusdata = "01";
+
+                                    }else{
+
+                                        System.out.println("data berhasi di input");
+                                        Statusdata = "00";
+                                    }
+                         request.setAttribute("session", username);
+                         request.setAttribute("statusdata", Statusdata);
+                         request.setAttribute("page", "pelangganadd");
+                         rd = request.getRequestDispatcher("Home.jsp");
+                         rd.forward(request, response);
+
+                            break;
+                    
+                    case "pelanggan_edit":
+                        
+                        String pelanggan_id = request.getParameter("pelanggan_id");
+                        System.out.println("ini id : " + pelanggan_id);
+                        id = Integer.parseInt(pelanggan_id);
+                        pelanggan pl = new pelanggan();    
+
+
+                        pl = pel.getbyid(id);
+
+                        request.setAttribute("id", pelanggan_id);
+                        request.setAttribute("namapelanggan", AES.decrypt(pl.getPelanggan_nama()));
+                        request.setAttribute("alamatpelanggan", AES.decrypt(pl.getPelanggan_alamat()));
+                        request.setAttribute("notlp", AES.decrypt(pl.getPelanggan_nohp()));
+                        request.setAttribute("emailpelanggan", AES.decrypt(pl.getPelanggan_email()));
+                        request.setAttribute("pekerjaan", AES.decrypt(pl.getPelanggan_pekerjaan()));
+
+                        request.setAttribute("session", username);
+                        request.setAttribute("page", "pelangganedit");
+                        rd = request.getRequestDispatcher("Home.jsp");
+                        rd.forward(request, response);
+                        
+                         break;
                          
-                         if (status == 0){
-                                System.out.println("data gagal di input");
-                                Statusdata = "01";
+                    case "pelanggan_editsave":
+                        
+                        idpel = request.getParameter("pelid");
+                        nama = request.getParameter("namapelanggan");
+                        alamat = request.getParameter("alamatpelanggan");
+                        nohp = request.getParameter("nohp");
+                        email = request.getParameter("emailpelanggan");
+                        pekerjaan = request.getParameter("pekerjaan") ;
+                        Statusdata = null;
+                        id = Integer.parseInt(idpel);
+                        System.out.println("id :" + id);
+                        System.out.println("nama :" + nama);
+                        System.out.println("Alamat :" + alamat);
+                        System.out.println("no hp :" + nohp);
+                        System.out.println("email :" + email);
+                        System.out.println("pekerjaan :" + pekerjaan);
 
-                            }else{
+                            plu.setId_pelanggan(id);
+                            plu.setPelanggan_nama(AES.encrypt(nama));
+                            plu.setPelanggan_alamat(AES.encrypt(alamat));
+                            plu.setPelanggan_nohp(AES.encrypt(nohp));
+                            plu.setPelanggan_email(AES.encrypt(email));
+                            plu.setPelanggan_pekerjaan(AES.encrypt(pekerjaan));
+                            status = pel.update(plu);
 
-                                System.out.println("data berhasi di input");
-                                Statusdata = "00";
-                            }
-                 request.setAttribute("session", username);
-                 request.setAttribute("statusdata", Statusdata);
-                 request.setAttribute("page", "pelangganadd");
-                 rd = request.getRequestDispatcher("Home.jsp");
-                 rd.forward(request, response);
-                
-                
+                        if (status == 0){
+                                    System.out.println("data gagal di Update");
+                                    Statusdata = "01";
+
+                                }else{
+
+                                    System.out.println("data berhasi di Update");
+                                    Statusdata = "00";
+                                }
+
+
+                     request.setAttribute("session", username);
+                     request.setAttribute("statusdata", Statusdata);
+                     request.setAttribute("page", "pelangganedit");
+                     rd = request.getRequestDispatcher("Home.jsp");
+                     rd.forward(request, response);
+                     
+                     break;
+                     
+                    case "pelanggan_hapus":
+                           idpel = request.getParameter("pelanggan_id");
+                            
+                            id = Integer.parseInt(idpel);
+                            System.out.println("id :" + id);
+
+
+                                status = pel.delete(id);
+
+                            if (status == 0){
+                                        System.out.println("data gagal di Update");
+                                        Statusdata = "01";
+
+                                    }else{
+
+                                        System.out.println("data berhasi di Update");
+                                        Statusdata = "00";
+                                    }
+                       
+                            list = pel.getAll();
+
+
+                                    for (pelanggan pl2 : list) {
+                                     pelanggan png = new pelanggan();
+                                        png.setId_pelanggan(pl2.getId_pelanggan());              
+                                        png.setPelanggan_nama(AES.decrypt(pl2.getPelanggan_nama()));
+                                        png.setPelanggan_alamat(AES.decrypt(pl2.getPelanggan_alamat()));
+                                        png.setPelanggan_nohp(AES.decrypt(pl2.getPelanggan_nohp()));
+                                        png.setPelanggan_email(AES.decrypt(pl2.getPelanggan_email()));
+                                        png.setPelanggan_pekerjaan(AES.decrypt(pl2.getPelanggan_pekerjaan()));
+
+                                    list2.add(png);
+                                    }
+
+
+
+                         request.setAttribute("session", username);
+                         request.setAttribute("statusdata", Statusdata);
+                          request.setAttribute("listpelanggan", list2);
+                         request.setAttribute("page", "pelanggan");
+                         rd = request.getRequestDispatcher("Home.jsp");
+                         rd.forward(request, response);
+                         
+                     break;
                 }
-                
-            
+
             }else{
                 
                  request.getSession().setAttribute("username", null);

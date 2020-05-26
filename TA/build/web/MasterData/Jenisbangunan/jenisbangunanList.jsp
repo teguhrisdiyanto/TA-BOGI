@@ -14,6 +14,18 @@
       <h1>
         CV Pandu Putra Sarana
       </h1>
+              <div class="alert alert-success alert-dismissible se-pre-conberhasil">
+                       
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                          <h4><i class="icon fa fa-check"></i> Selamat !</h4>
+                         Data Telah berhasil Di Hapus
+                         
+                        </div>
+                    <div class="alert alert-danger alert-dismissible se-pre-congagal">
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                          <h4><i class="icon fa fa-check"></i> Peringatan !</h4>
+                          DATA GAGAL DI Hapus
+                        </div>
     </section>
 
     <section class="content">
@@ -26,7 +38,7 @@
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                  <button type="button" onclick="window.location.href='Karyawan?go=karyawan_add'  "class="btn btn-block btn-primary btn-sm"> <i class="fa fa-user-plus"></i>Tambah</button>
+                  <button type="button" onclick="window.location.href='jenisBangunan?go=jenisbangunan_add'  "class="btn btn-block btn-primary btn-sm"> <i class="fa fa-user-plus"></i>Tambah</button>
                 </div>
               </div>
             </div>
@@ -71,8 +83,8 @@
                  
                   
                         <td>
-                            <a href="">  <span class="label label-warning">Rubah</span> </a>
-                            <a href="">  <span class="label label-danger">Hapus</span> </a>
+                            <a href='jenisBangunan?go=jenisbangunan_edit&amp;jenisbangunan_id=<%=id_jenis%>'>  <span class="label label-warning">Rubah</span> </a>
+                            <a href='jenisBangunan?go=jenisbangunan_hapus&amp;jenisbangunan_id=<%=id_jenis%>' class="tombol-hapus">  <span class="label label-danger">Hapus</span> </a>
              
                         </td>                                 
 

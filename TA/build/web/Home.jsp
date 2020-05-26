@@ -149,8 +149,8 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="Pelanggan?go=list"><i class="fa fa-user"></i> Pelanggan</a></li>
-            <li><a href="jenisBangunan"><i class="fa fa-hospital-o"></i> Jenis Bangunan</a></li>
-            <li><a href="lokasiController"><i class="fa fa-map"></i> Lokasi</a></li>
+            <li><a href="jenisBangunan?go=list"><i class="fa fa-hospital-o"></i> Jenis Bangunan</a></li>
+            <li><a href="lokasiController?go=list"><i class="fa fa-map"></i> Lokasi</a></li>
            
           </ul>
         </li>
@@ -193,24 +193,51 @@
 else if (halaman.equals("pelanggan")) {
 %>
 
-<%@ include file="MasterData/pelangganList.jsp"%>
+<%@ include file="MasterData/Pelanggan/pelangganList.jsp"%>
 <% }
 
 else if (halaman.equals("jenisbangunan")) {
 %>
 
-<%@ include file="MasterData/jenisbangunan.jsp"%>
+<%@ include file="MasterData/Jenisbangunan/jenisbangunanList.jsp"%>
 <% }
 
 else if (halaman.equals("lokasibangunan")) {
 %>
 
-<%@ include file="MasterData/lokasiList.jsp"%>
+<%@ include file="MasterData/Lokasi/lokasiList.jsp"%>
 <% }
 else if (halaman.equals("pelangganadd")) {
 %>
 
-<%@ include file="MasterData/pelangganadd.jsp"%>
+<%@ include file="MasterData/Pelanggan/pelangganadd.jsp"%>
+<% }
+
+else if (halaman.equals("pelangganedit")) {
+%>
+
+<%@ include file="MasterData/Pelanggan/pelangganedit.jsp"%>
+<% }
+else if (halaman.equals("jenisbangunanadd")) {
+%>
+
+<%@ include file="MasterData/Jenisbangunan/jenisbangunanadd.jsp"%>
+<% }
+else if (halaman.equals("jenisbangunananedit")) {
+%>
+
+<%@ include file="MasterData/Jenisbangunan/jenisbangunanedit.jsp"%>
+<% }
+else if (halaman.equals("lokasidd")) {
+%>
+
+<%@ include file="MasterData/Lokasi/Lokasiadd.jsp"%>
+<% }
+
+else if (halaman.equals("lokasiedit")) {
+%>
+
+<%@ include file="MasterData/Lokasi/Lokasiedit.jsp"%>
 <% }
 
 %>
@@ -430,6 +457,10 @@ else if (halaman.equals("pelangganadd")) {
 <script src="bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+
+<script src="plugins/sweetalert2/sweetalert2.all.min.js"></script>
 <!-- Sparkline -->
 <script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
 <!-- jvectormap  -->
@@ -445,6 +476,30 @@ else if (halaman.equals("pelangganadd")) {
 <script src="dist/js/demo.js"></script>
 
 <script>
+          $('.tombol-hapus').on('click', function(e) {
+//            console.log("cobaaaaaaaa");
+//
+//        window.alert("test");
+        e.preventDefault();
+        const href = $(this).attr('href');
+
+        Swal.fire({
+            title: 'Apakah anda yakin ingin menghapus data ini',
+            text: "Data Akan Di Hapus!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus Data!'
+        }).then((result) => {
+            if (result.value) {
+
+                document.location.href = href;
+
+            }
+        })
+
+    });
     
     var statusdata = "<%= statuscodedaata  %>";
     console.log("ini status data : "+statusdata);

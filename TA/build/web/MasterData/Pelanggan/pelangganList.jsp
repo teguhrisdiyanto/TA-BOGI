@@ -17,6 +17,18 @@
       <h1>
         CV Pandu Putra Sarana
       </h1>
+          <div class="alert alert-success alert-dismissible se-pre-conberhasil">
+                       
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                          <h4><i class="icon fa fa-check"></i> Selamat !</h4>
+                         Data Telah berhasil Di Hapus
+                         
+                        </div>
+                    <div class="alert alert-danger alert-dismissible se-pre-congagal">
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                          <h4><i class="icon fa fa-check"></i> Peringatan !</h4>
+                          DATA GAGAL DI Hapus
+                        </div>
     </section>
 
     <section class="content">
@@ -82,9 +94,8 @@
                  
                   
                         <td>
-                            <a href="">  <span class="label label-warning">Rubah</span> </a>
-                            <a href="">  <span class="label label-danger">Hapus</span> </a>
-             
+                           <a href="Pelanggan?go=pelanggan_edit&amp;pelanggan_id=<%=id_pelanggan%>">  <span class="label label-warning">Rubah</span> </a>
+                            <a href="Pelanggan?go=pelanggan_hapus&amp;pelanggan_id=<%=id_pelanggan%>" class = "tombol-hapus" >  <span class="label label-danger" >Hapus</span> </a>
                         </td>                                 
 
                 </tr>
