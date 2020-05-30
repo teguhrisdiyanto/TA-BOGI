@@ -27,6 +27,10 @@
         <servlet-name>lokasiController</servlet-name>
         <servlet-class>Controllers.Masterdata.lokasiController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>product</servlet-name>
+        <servlet-class>Controllers.product</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/LoginController</url-pattern>
@@ -50,6 +54,10 @@
     <servlet-mapping>
         <servlet-name>lokasiController</servlet-name>
         <url-pattern>/lokasiController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>product</servlet-name>
+        <url-pattern>/product</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
