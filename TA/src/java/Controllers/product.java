@@ -5,8 +5,6 @@
  */
 package Controllers;
 
-import com.TA.Dao.impl.userDaoImpl;
-import com.TA.models.users;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
@@ -19,9 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author teguh
+ * @author Tri Bogi B
  */
-public class LoginController extends HttpServlet {
+public class product extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,59 +33,11 @@ public class LoginController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-      PrintWriter out = response.getWriter();
+        PrintWriter out = response.getWriter();
       RequestDispatcher rd;
-      
-        try  {
-            String Username = request.getParameter("username");
-            String password = request.getParameter("password");
-           
-            userDaoImpl Users = new userDaoImpl();
-             users usr = new users();
-             usr = Users.username(Username);
+        try {
             /* TODO output your page here. You may use following sample code. */
-            String getUser = usr.getUserame();
             
-             if(Username.equals(getUser)){
-                getUser = usr.getUserame();
-                String pwd = usr.getPassword();
-                    if(password.equals(pwd)){
-                request.getSession().setAttribute("username", getUser);
-//                request.getSession().setAttribute("token", RESPONSE.getToken());
-                response.sendRedirect("Dashboard");
-                        
-
-                    }else{
-                        request.setAttribute("message", "Password Salah");
-                        rd = request.getRequestDispatcher("login_gagal.jsp");
-                        rd.forward(request, response);
-
-                    }
-
-                    System.out.println("Ini User : " + getUser);
-                    System.out.println("Ini Password : " + pwd);
-            
-            }else{
-                 
-                request.setAttribute("message", "Username Salah");
-                rd = request.getRequestDispatcher("login_gagal.jsp");
-                rd.forward(request, response);
-                System.out.println("Test Login2");
-            
-           
-            }
-            
-            
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet LoginController</title>");            
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>Servlet LoginController at " + username+ "</h1>");
-//            out.println("<h1>Servlet LoginController at " + password  + "</h1>");
-//            out.println("</body>");
-//            out.println("</html>");
         } catch (Exception e){
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, e);
         }   finally {            
