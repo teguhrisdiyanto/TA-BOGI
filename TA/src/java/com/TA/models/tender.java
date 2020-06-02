@@ -14,7 +14,6 @@ public class tender {
     private pelanggan Pelanggan;
     private jenisBangunan Jenis_Bangunan;
     private lokasi Lokasi;
-    private cicilan Cicilan;
     private long tender_tanggaltender;
     private String tender_namatender;
     private String tender_nilaikontrak;
@@ -51,14 +50,6 @@ public class tender {
 
     public void setLokasi(lokasi Lokasi) {
         this.Lokasi = Lokasi;
-    }
-
-    public cicilan getCicilan() {
-        return Cicilan;
-    }
-
-    public void setCicilan(cicilan Cicilan) {
-        this.Cicilan = Cicilan;
     }
 
     public long getTender_tanggaltender() {
