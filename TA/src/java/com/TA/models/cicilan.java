@@ -13,10 +13,19 @@ public class cicilan {
     
     private int id_cicilan;
     private String cicilan_nominal;
+    private tender Tender;
     private long cicilan_tgl ;
 
     public int getId_cicilan() {
         return id_cicilan;
+    }
+
+    public tender getTender() {
+        return Tender;
+    }
+
+    public void setTender(tender Tender) {
+        this.Tender = Tender;
     }
 
     public void setId_cicilan(int id_cicilan) {
