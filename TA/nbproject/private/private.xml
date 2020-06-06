@@ -4,20 +4,34 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/TA_BOGI%20SERVER/TA/web/Login.jsp</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/src/java/com/TA/models/tender.java</file>
             <file>file:/D:/TA_BOGI%20SERVER/TA/web/Beranda.jsp</file>
-            <file>file:/D:/TA_BOGI%20SERVER/TA/web/Home.jsp</file>
             <file>file:/D:/TA_BOGI%20SERVER/TA/web/MasterData/Lokasi/Lokasiadd.jsp</file>
-            <file>file:/D:/TA_BOGI%20SERVER/TA/web/MasterData/Pelanggan/pelangganedit.jsp</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/src/java/Controllers/Logout.java</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/src/java/com/TA/models/pelanggan.java</file>
             <file>file:/D:/TA_BOGI%20SERVER/TA/src/java/Controllers/Masterdata/jenisBangunanController.java</file>
             <file>file:/D:/TA_BOGI%20SERVER/TA/web/MasterData/Jenisbangunan/jenisbangunanadd.jsp</file>
-            <file>file:/D:/TA_BOGI%20SERVER/TA/web/login_gagal.jsp</file>
             <file>file:/D:/TA_BOGI%20SERVER/TA/web/MasterData/Jenisbangunan/jenisbangunanedit.jsp</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/src/java/Controllers/LoginController.java</file>
             <file>file:/D:/TA_BOGI%20SERVER/TA/web/MasterData/Lokasi/Lokasiedit.jsp</file>
-            <file>file:/D:/TA_BOGI%20SERVER/TA/web/MasterData/Pelanggan/pelangganadd.jsp</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/src/java/com/TA/models/users.java</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/src/java/com/TA/Dao/pelangganDao.java</file>
             <file>file:/D:/TA_BOGI%20SERVER/TA/web/MasterData/Jenisbangunan/jenisbangunanList.jsp</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/src/java/com/TA/Dao/impl/tenderDaoImpl.java</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/web/MasterData/product/productall.jsp</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/src/java/Controllers/Masterdata/PelangganController.java</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/src/java/com/TA/models/cicilan.java</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/src/java/com/TA/Dao/tenderDao.java</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/src/java/com/TA/Dao/jenisBangunanDao.java</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/web/Home.jsp</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/web/MasterData/Pelanggan/pelangganedit.jsp</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/src/java/Controllers/product.java</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/web/MasterData/Pelanggan/pelangganadd.jsp</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/src/java/com/TA/Dao/impl/pelangganDaoImpl.java</file>
             <file>file:/D:/TA_BOGI%20SERVER/TA/src/java/Controllers/Masterdata/lokasiController.java</file>
             <file>file:/D:/TA_BOGI%20SERVER/TA/web/MasterData/Pelanggan/pelangganList.jsp</file>
             <file>file:/D:/TA_BOGI%20SERVER/TA/web/MasterData/Lokasi/lokasiList.jsp</file>
+            <file>file:/D:/TA_BOGI%20SERVER/TA/src/java/Controllers/Dashboard.java</file>
         </group>
     </open-files>
 </project-private>
