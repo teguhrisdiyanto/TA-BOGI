@@ -19,7 +19,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Tambah Data lokasi Bangunan</h3>
+              <h3 class="box-title">Tambah Data lokasi Tender</h3>
 
              
              </div>

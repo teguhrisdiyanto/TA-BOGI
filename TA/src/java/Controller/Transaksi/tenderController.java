@@ -48,7 +48,7 @@ public class tenderController extends HttpServlet {
             String username = (String) request.getSession().getAttribute("username");
             tenderDaoImpl tend = new tenderDaoImpl();
             String link = request.getParameter("go");
-            
+            String tender_id = null;
             if (username != null){
                 
                 List<tender> list;
@@ -64,8 +64,8 @@ public class tenderController extends HttpServlet {
                                             tender T = new tender();
                     
                                             T.setId_tender(tl.getId_tender());
-//                                            T.setTender_namatender(AES.decrypt(tl.getTender_namatender()));
-                                            T.setTender_namatender(tl.getTender_namatender());
+                                            T.setTender_namatender(AES.decrypt(tl.getTender_namatender()));
+//                                            T.setTender_namatender(tl.getTender_namatender());
                                             T.setTender_tanggaltender(tl.getTender_tanggaltender());
                                             
                                             pelanggan P = new pelanggan();
@@ -92,10 +92,32 @@ public class tenderController extends HttpServlet {
                              rd = request.getRequestDispatcher("Home.jsp");
                              rd.forward(request, response);
                 
+                    case "tender_detail":
+                        
+                        tender_id= request.getParameter("tender_id");
+                        int id  = Integer.parseInt(tender_id);
+                        System.out.println("ini id coy  : " + id);
+                          tender tn = new tender();
+                          tn = tend.getbyid(id);
+                        request.setAttribute("tanggal", tn.getTender_tanggaltender());
+                        request.setAttribute("namatender", AES.decrypt(tn.getTender_namatender()));
+                        request.setAttribute("nilaikontrak", AES.decrypt(tn.getTender_nilaikontrak()));
+                        request.setAttribute("nilaidp", AES.decrypt(tn.getTender_nilaidp()));
+                        request.setAttribute("alamat", AES.decrypt(tn.getTender_alamat()));
+                        request.setAttribute("namapelanggan", AES.decrypt(tn.getPelanggan().getPelanggan_nama()));
+                        request.setAttribute("alamatpelanggan", AES.decrypt(tn.getPelanggan().getPelanggan_alamat()));
+                        request.setAttribute("notlp", AES.decrypt(tn.getPelanggan().getPelanggan_nohp()));
+                        request.setAttribute("emailpelanggan", AES.decrypt(tn.getPelanggan().getPelanggan_email()));
+                        request.setAttribute("pekerjaan", AES.decrypt(tn.getPelanggan().getPelanggan_pekerjaan()));
+                        request.setAttribute("jenisbangunan", AES.decrypt(tn.getJenis_Bangunan().getJenisbangun_nama()));
+                        request.setAttribute("lokasibangunan", AES.decrypt(tn.getLokasi().getLokasi_namalokasi()));
                 
-                
-                
-                
+                        
+                             request.setAttribute("session", username);
+                             request.setAttribute("page", "tenderid");
+//                             request.setAttribute("listtender", list2);
+                             rd = request.getRequestDispatcher("Home.jsp");
+                             rd.forward(request, response);
                 }
                 
                 

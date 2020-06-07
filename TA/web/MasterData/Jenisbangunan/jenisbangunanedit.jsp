@@ -36,14 +36,14 @@
                        
                           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                           <h4><i class="icon fa fa-check"></i> Selamat !</h4>
-                         Data Telah berhasil Di Input
+                         Data Telah berhasil Di Edit
                          
                         </div>
                   
                    <div class="alert alert-danger alert-dismissible se-pre-congagal">
                           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                           <h4><i class="icon fa fa-check"></i> Peringatan !</h4>
-                          DATA GAGAL DI INPUT
+                          DATA GAGAL DI EDIT
                         </div>
                   
                   

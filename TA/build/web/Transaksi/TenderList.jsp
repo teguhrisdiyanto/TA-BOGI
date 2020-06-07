@@ -90,7 +90,7 @@
                  
                   
                         <td>
-                           <a href="Pelanggan?go=pelanggan_edit&amp;pelanggan_id=<%=id_tender%>">  <span class="label label-warning">Rubah</span> </a>
+                           <a href="tenderController?go=tender_detail&amp;tender_id=<%=id_tender%>">  <span class="label label-warning">Rubah</span> </a>
                             <a href="Pelanggan?go=pelanggan_hapus&amp;pelanggan_id=<%=id_tender%>" class = "tombol-hapus" >  <span class="label label-danger" >Hapus</span> </a>
                         </td>                                 
 

@@ -24,7 +24,7 @@
                     <div class="alert alert-danger alert-dismissible se-pre-congagal">
                           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                           <h4><i class="icon fa fa-check"></i> Peringatan !</h4>
-                          DATA GAGAL DI Hapus
+                          DATA GAGAL DI HAPUS
                         </div>
     </section>
 
@@ -34,7 +34,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Data Pelanggan</h3>
+              <h3 class="box-title">Data Lokasi</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">

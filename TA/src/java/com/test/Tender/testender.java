@@ -20,7 +20,7 @@ public class testender {
         
         tenderDaoImpl tnd = new tenderDaoImpl();
         
-        System.out.println("ini hasil : " + gson.toJson(tnd.getAll()));
+        System.out.println("ini hasil : " + gson.toJson(tnd.getbyid(1)));
     
     }
     

@@ -53,7 +53,51 @@ public class tenderDaoImpl implements tenderDao<tender> {
 
     @Override
     public tender getbyid(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        PreparedStatement statement = null;
+        String byid = "SELECT *  FROM _tender T, _pelanggan P, _jenisbangun J, _lokasi L where id_tender = '" + id + "'";
+       tender tn = new tender();
+        try{
+             
+             statement = connection.prepareStatement(byid);
+             
+             ResultSet rs = statement.executeQuery();
+             rs.next();
+             tn.setId_tender(rs.getInt("id_tender"));
+             tn.setTender_namatender(rs.getString("tender_namatender"));
+             tn.setTender_tanggaltender(rs.getLong("tender_tanggaltender"));
+             tn.setTender_nilaikontrak(rs.getString("tender_nilaikontrak"));
+             tn.setTender_nilaidp(rs.getString("tender_nilaidp"));
+             tn.setTender_alamat(rs.getString("tender_alamat"));
+             
+             pelanggan pl = new pelanggan();
+             pl.setId_pelanggan(rs.getInt("id_pelanggan"));
+             pl.setPelanggan_nama(rs.getString("pelanggan_nama"));
+             pl.setPelanggan_alamat(rs.getString("pelanggan_alamat"));
+             pl.setPelanggan_nohp(rs.getString("pelanggan_nohp"));
+             pl.setPelanggan_email(rs.getString("pelanggan_email"));
+             pl.setPelanggan_pekerjaan(rs.getString("pelanggan_pekerjaan"));
+             tn.setPelanggan(pl);
+             
+            lokasi L = new lokasi();
+            L.setLokasi_namalokasi(rs.getString("lokasi_namalokasi"));
+            tn.setLokasi(L);
+            
+            jenisBangunan J = new jenisBangunan();
+            J.setJenisbangun_nama(rs.getString("jenisbangun_nama"));
+            tn.setJenis_Bangunan(J);
+             
+             
+             rs.close();
+             System.out.println("Ini List Member Yang Ada DI DAO uSER :" + gson.toJson(tn));
+             return tn;
+        
+        }catch(Exception e){
+        System.out.println("Ini List Member Yang Ada DI DAO uSER CATCH :" + gson.toJson(tn));
+        
+            return tn;
+        }
+        
+        
     }
 
     @Override
