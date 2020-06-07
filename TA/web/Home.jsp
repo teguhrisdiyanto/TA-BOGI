@@ -229,6 +229,11 @@ else if (halaman.equals("tenderid")) {
 
 <%@ include file="Transaksi/tenderid.jsp"%>
 <% }
+else if (halaman.equals("tambahtender")) {
+%>
+
+<%@ include file="Transaksi/tambahtender.jsp"%>
+<% }
 
 %>
 
@@ -500,6 +505,23 @@ else if (halaman.equals("tenderid")) {
         $(".se-pre-congagal").show();
          $(".se-pre-conberhasil").hide();
     }
+    
+    
+        function total_bayar(){
+            var hargaobat = document.getElementById('hargaObat').value;
+            var hargakonsul= document.getElementById('hargaKonsul').value;
+           
+            var totalbayar = parseFloat(hargaobat) - parseFloat(hargakonsul);
+            if (!isNaN(totalbayar)) {
+             document.getElementById('totalBayar').value = totalbayar;
+             }
+      
+        }
+    
+          $('#hargaKonsul').change(function() {
+            total_bayar();
+            
+        });
 </script>
 </body>
 </html>

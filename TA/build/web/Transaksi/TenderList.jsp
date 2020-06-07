@@ -38,7 +38,7 @@
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                  <button type="button" onclick="window.location.href='Pelanggan?go=pelanggan_add'  "class="btn btn-block btn-primary btn-sm"> <i class="fa fa-user-plus"></i>Tambah</button>
+                  <button type="button" onclick="window.location.href='tenderController?go=tambah_tender'  "class="btn btn-block btn-primary btn-sm"> <i class="fa fa-user-plus"></i>Tambah</button>
 
                 </div>
               </div>

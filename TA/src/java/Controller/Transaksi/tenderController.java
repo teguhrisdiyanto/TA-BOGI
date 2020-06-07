@@ -6,6 +6,9 @@
 package Controller.Transaksi;
 
 import Controllers.LoginController;
+import com.TA.Dao.impl.jenisBangunanDaoImpl;
+import com.TA.Dao.impl.lokasiDaoImpl;
+import com.TA.Dao.impl.pelangganDaoImpl;
 import com.TA.Dao.impl.tenderDaoImpl;
 import com.TA.enkripsi.AES;
 import com.TA.models.jenisBangunan;
@@ -47,6 +50,9 @@ public class tenderController extends HttpServlet {
         try {
             String username = (String) request.getSession().getAttribute("username");
             tenderDaoImpl tend = new tenderDaoImpl();
+            pelangganDaoImpl pel = new pelangganDaoImpl();
+            jenisBangunanDaoImpl jenDao = new jenisBangunanDaoImpl();
+            lokasiDaoImpl lokDao = new lokasiDaoImpl();
             String link = request.getParameter("go");
             String tender_id = null;
             if (username != null){
@@ -118,7 +124,61 @@ public class tenderController extends HttpServlet {
 //                             request.setAttribute("listtender", list2);
                              rd = request.getRequestDispatcher("Home.jsp");
                              rd.forward(request, response);
+                             
+                    case "tambah_tender":
+                         List<pelanggan> listpel;
+                         List<jenisBangunan> lisjen;
+                         List<lokasi> listlok;
+                         List<pelanggan> listpeldecr = new ArrayList<>();
+                         List<jenisBangunan> listjendecr = new ArrayList<>();
+                         List<lokasi> listlokdecr = new ArrayList<>();
+                          listpel = pel.getAll();
+                          lisjen = jenDao.getAll();
+                          listlok = lokDao.getAll();
+
+
+                                       for (pelanggan pl :listpel) {
+                                        pelanggan png = new pelanggan();
+                                           png.setId_pelanggan(pl.getId_pelanggan());              
+                                           png.setPelanggan_nama(AES.decrypt(pl.getPelanggan_nama()));
+
+                                       listpeldecr.add(png);
+                                       }
+                                       
+                                       
+                                       for (jenisBangunan je :lisjen) {
+                                        jenisBangunan jen = new jenisBangunan();
+                                           jen.setId_jenisbangun(je.getId_jenisbangun());              
+                                           jen.setJenisbangun_nama(AES.decrypt(je.getJenisbangun_nama()));
+
+                                       listjendecr.add(jen);
+                                       }
+                                       
+                                       for (lokasi lock : listlok) {
+                                       lokasi lok = new lokasi();
+                                           lok.setId_lokasi(lock.getId_lokasi());              
+                                           lok.setLokasi_namalokasi(AES.decrypt(lock.getLokasi_namalokasi()));
+
+                                       listlokdecr.add(lok);
+                                       }
+                                       
+                                       
+                        
+                             request.setAttribute("session", username);
+                             request.setAttribute("page", "tambahtender");
+                             request.setAttribute("listpel", listpeldecr);
+                             request.setAttribute("listjen", listjendecr);
+                             request.setAttribute("listlok", listlokdecr);
+                             
+                             rd = request.getRequestDispatcher("Home.jsp");
+                             rd.forward(request, response);
+                        
+                        
+                      
+                      
                 }
+                
+                
                 
                 
                 
