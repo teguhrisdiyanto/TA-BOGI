@@ -21,33 +21,72 @@
                 <div class="box-header">
                     <h3 class="box-title">Detail Tender</h3>
                       <br><br>
+                    <%String namapelanggan = (String)request.getAttribute("namapelanggan");%>
+                    <%String alamatpelanggan = (String)request.getAttribute("alamatpelanggan");%>
+                    <%String notlp = (String)request.getAttribute("notlp");%>
+                    <%String emailpelanggan = (String)request.getAttribute("emailpelanggan");%>
+                    <%String pekerjaan = (String)request.getAttribute("pekerjaan");%>
                     
                     
+                    <%long tanggal = (long)request.getAttribute("tanggal");%>
+                    <%String namatender = (String)request.getAttribute("namatender");%>
+                    <%String nilaikontrak = (String)request.getAttribute("nilaikontrak");%>
+                    <%String nilaidp = (String)request.getAttribute("nilaidp");%>
+                    <%String alamat = (String)request.getAttribute("alamat");%>
+                    
+                    
+                    <%String jenisbangunan = (String)request.getAttribute("jenisbangunan");%>
+                    <%String lokasibangunan = (String)request.getAttribute("lokasibangunan");%>
+                  
+                    
+                                 
+                                            
                     <!--col 1-->
+       <div class="col-md-6">
+          <div class="box box-widget widget-user-2">
+            <!-- Add the bg color to the header using any of the bg-* classes -->
+            <div class="widget-user-header bg-yellow">
+              <div class="widget-user-image">
+                <img class="img-circle" src="dist/img/avatar5.png" alt="">
+              </div>
+              <!-- /.widget-user-image -->
+              <h3 class="widget-user-username">Data Pelanggan</h3>
+              <h5 class="widget-user-desc">Nama Pelanggan : <%= namapelanggan%></h5>
+            </div>
+            <div class="box-footer no-padding">
+              <ul class="nav nav-stacked">
+                <li><a href="#">No Tlp<span class="pull-right "><%= notlp%></span></a></li>
+                <li><a href="#">Emailpelanggan <span class="pull-right"><%= emailpelanggan%></span></a></li>
+                <li><a href="#">Pekerjaan <span class="pull-right "><%= pekerjaan%></span></a></li>
+                <li><a href="#">Alamat <span class="pull-right "><%= alamatpelanggan%></span></a></li>
+              </ul>
+            </div>
+          </div>
+       </div>              
                     <div class="col-md-6">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputFile">File input</label>
-                                <input type="file" id="exampleInputFile">
-                                <p class="help-block">Example block-level help text here.</p>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Check me out
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
-                    </div>              
-
+                            <div class="box box-widget widget-user-2">
+            <!-- Add the bg color to the header using any of the bg-* classes -->
+            <div class="widget-user-header bg-yellow">
+              <div class="widget-user-image">
+                <img class="img-circle" src="dist/img/images.png" alt="">
+              </div>
+              <!-- /.widget-user-image -->
+              <h3 class="widget-user-username">Data Tender </h3>
+            <h5 class="widget-user-desc">Nama Pelanggan : <%= namapelanggan%></h5>
+            </div>
+            <div class="box-footer no-padding">
+              <ul class="nav nav-stacked">
+                <li><a href="#">Tanggaln Tender <span class="pull-right"><%= tanggal%></span></a></li>
+                <li><a href="#">Nama Tender <span class="pull-right "><%= namatender%></span></a></li>
+                <li><a href="#">Jenis Bangunan <span class="pull-right "><%= jenisbangunan%></span></a></li>
+                <li><a href="#">Nilai Kontrak <span class="pull-right ">Rp.<%= nilaikontrak%></span></a></li>
+                <li><a href="#">Nilai DP <span class="pull-right ">Rp.<%= nilaidp%></span></a></li>
+                <li><a href="#">Lokasi <span class="pull-right "><%= lokasibangunan%></span></a></li>
+              </ul>
+            </div>
+          </div>
+                        
+                    </div>
 
                 </div>
 
