@@ -34,7 +34,7 @@
 
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
-              <form class="form-horizontal" id="form1" name="form1" method="post" action="Pelanggan?go=pelanggan_save">
+              <form class="form-horizontal" id="form1" name="form1" method="post" action="tenderController?go=tender_save">
               <div class="box-body">
                <div class="alert alert-success alert-dismissible se-pre-conberhasil">
                        
@@ -58,7 +58,7 @@
                   <div class="input-group input-group-sm">
                   <div class="col-sm-10">
                      <span class="input-group-btn">
-                         <input class="form-control" name="namapelanggan"  id="kode" type="text"  size="50" maxlength="150" placeholder="Nama"  value="${namaKaryawan}" required />
+                         <input class="form-control" name="namatender"  id="kode" type="text"  size="50" maxlength="150" placeholder="Nama"  value="${namaKaryawan}" required />
                      
                     </span>
                   </div>
@@ -71,7 +71,7 @@
                   <div class="input-group input-group-sm">
                   <div class="col-sm-12">
                       
-                        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                        <select  name="nama_pelanggan" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
                             
                  <%     
                      List<pelanggan> list;
@@ -100,7 +100,7 @@
                     
                   <div class="input-group input-group-sm">
                   <div class="col-sm-12">
-                                            <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                   <select name="jenis_bangunan" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
                             
                  <%     
                      List<jenisBangunan> list2;
@@ -124,11 +124,11 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-4 control-label">Email</label>
+                  <label for="inputPassword3" class="col-sm-4 control-label">Lokasi</label>
                     
                   <div class="input-group input-group-sm">
                   <div class="col-sm-12">
-                   <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                      <select name="lokasi" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
                             
                  <%     
                      List<lokasi> list3;
@@ -156,7 +156,7 @@
                     
                   <div class="input-group input-group-sm">
                   <div class="col-sm-12">
-                    <input type="text" class="form-control" name="hargaObat" id ="hargaObat" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required  onkeypress="return onlyNumberKey(event)"/>
+                    <input type="text" class="form-control" name="nilaikontrak" id ="nilaikontrak" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required  onkeypress="return onlyNumberKey(event)"/>
                   </div>
                   </div>
                 </div>
@@ -166,7 +166,7 @@
                     
                   <div class="input-group input-group-sm">
                   <div class="col-sm-12">
-                    <input type="text" class="form-control" name="hargaKonsul" id ="hargaKonsul" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required  onkeypress="return onlyNumberKey(event)"/>
+                    <input type="text" class="form-control" name="nilaidp" id ="nilaidp" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required  onkeypress="return onlyNumberKey(event)"/>
                   </div>
                   </div>
                 </div>
@@ -177,7 +177,7 @@
                     
                   <div class="input-group input-group-sm">
                   <div class="col-sm-12">
-                    <input type="text" class="form-control" name="totalBayar" id ="totalBayar" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required  onkeypress="return onlyNumberKey(event)"/>
+                    <input type="text" class="form-control" name="sisabayar" id ="sisabayar" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required  onkeypress="return onlyNumberKey(event)"/>
                   </div>
                   </div>
                 </div>

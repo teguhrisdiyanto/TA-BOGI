@@ -172,18 +172,31 @@ public class tenderController extends HttpServlet {
                              
                              rd = request.getRequestDispatcher("Home.jsp");
                              rd.forward(request, response);
+                             
+                    case "tender_save" :
+                        
+                            String namatender = request.getParameter("namatender");
+                            String nama_pelanggan = request.getParameter("nama_pelanggan");
+                            String jenis_bangunan = request.getParameter("jenis_bangunan");
+                            String lokasi = request.getParameter("lokasi");
+                           String nilaikontrak = request.getParameter("nilaikontrak") ;
+                           String nilaidp = request.getParameter("nilaidp") ;
+                           String sisabayar = request.getParameter("sisabayar") ;
+                           
+                           System.out.println(namatender);
+                           System.out.println(nama_pelanggan);
+                           System.out.println(jenis_bangunan);
+                           System.out.println(lokasi);
+                           System.out.println(nilaidp);
+                           System.out.println(sisabayar);
+                        
                         
                         
                       
                       
                 }
                 
-                
-                
-                
-                
-                
-                
+
                 
             }else{
              request.getSession().setAttribute("username", null);

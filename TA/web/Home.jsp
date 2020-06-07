@@ -508,17 +508,17 @@ else if (halaman.equals("tambahtender")) {
     
     
         function total_bayar(){
-            var hargaobat = document.getElementById('hargaObat').value;
-            var hargakonsul= document.getElementById('hargaKonsul').value;
+            var hargaobat = document.getElementById('nilaikontrak').value;
+            var hargakonsul= document.getElementById('nilaidp').value;
            
             var totalbayar = parseFloat(hargaobat) - parseFloat(hargakonsul);
             if (!isNaN(totalbayar)) {
-             document.getElementById('totalBayar').value = totalbayar;
+             document.getElementById('sisabayar').value = totalbayar;
              }
       
         }
     
-          $('#hargaKonsul').change(function() {
+          $('#nilaidp').change(function() {
             total_bayar();
             
         });
