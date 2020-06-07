@@ -21,13 +21,14 @@
                 <div class="box-header">
                     <h3 class="box-title">Detail Tender</h3>
                       <br><br>
+                      <!--pelanggan-->
                     <%String namapelanggan = (String)request.getAttribute("namapelanggan");%>
                     <%String alamatpelanggan = (String)request.getAttribute("alamatpelanggan");%>
                     <%String notlp = (String)request.getAttribute("notlp");%>
                     <%String emailpelanggan = (String)request.getAttribute("emailpelanggan");%>
                     <%String pekerjaan = (String)request.getAttribute("pekerjaan");%>
                     
-                    
+                    <!--tender-->
                     <%long tanggal = (long)request.getAttribute("tanggal");%>
                     <%String namatender = (String)request.getAttribute("namatender");%>
                     <%String nilaikontrak = (String)request.getAttribute("nilaikontrak");%>
