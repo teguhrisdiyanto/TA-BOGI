@@ -54,7 +54,7 @@
                   <div class="input-group input-group-sm">
                   <div class="col-sm-10">
                      <span class="input-group-btn">
-                         <input class="form-control" name="namapelanggan"  id="kode" type="text"  size="50" maxlength="25" placeholder="Nama"  value="${namaKaryawan}" required />
+                         <input class="form-control" name="namapelanggan"  id="kode" type="text"  size="50" maxlength="150" placeholder="Nama"  value="${namaKaryawan}" required />
                      
                     </span>
                   </div>
@@ -77,7 +77,7 @@
                     
                   <div class="input-group input-group-sm">
                   <div class="col-sm-12">
-                     <input type="text" class="form-control"  name="nohp"  id="datemask" size="40" maxlength="35" value="${tanggalLahir}" placeholder="No Hp" required/>
+                     <input type="text" class="form-control"  name="nohp"  id="datemask" size="40" maxlength="100" value="${tanggalLahir}" placeholder="No Hp" required/>
                   </div>
                   </div>
                 </div>
@@ -86,7 +86,7 @@
                     
                   <div class="input-group input-group-sm">
                   <div class="col-sm-12">
-                    <input type="email" class="form-control" name="emailpelanggan"  id="phone" size="40" maxlength="20" value="${emailKaryawan}" placeholder="Ex : bogi.bobogi@gmail.com" required />
+                    <input type="email" class="form-control" name="emailpelanggan"  id="phone" size="40" maxlength="150" value="${emailKaryawan}" placeholder="Ex : bogi.bobogi@gmail.com" required />
                   </div>
                   </div>
                 </div>
@@ -97,7 +97,7 @@
                     
                   <div class="input-group input-group-sm">
                   <div class="col-sm-12">
-                    <input type="text" class="form-control" name="pekerjaan"  id="nmkategoritxt" size="40" maxlength="15" value="${noTlp}" placeholder="Pekerjaan" required  onkeypress="return onlyNumberKey(event)"/>
+                    <input type="text" class="form-control" name="pekerjaan"  id="nmkategoritxt" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required  onkeypress="return onlyNumberKey(event)"/>
                   </div>
                   </div>
                 </div>

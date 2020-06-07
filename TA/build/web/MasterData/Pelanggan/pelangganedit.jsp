@@ -43,7 +43,7 @@
                    <div class="alert alert-danger alert-dismissible se-pre-congagal">
                           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                           <h4><i class="icon fa fa-check"></i> Peringatan !</h4>
-                          DATA GAGAL DI Edit
+                          DATA GAGAL DI EDIT
                         </div>
                   
                   <input type="hidden" value="${id}" name="pelid"/>
