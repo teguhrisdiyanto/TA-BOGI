@@ -8,22 +8,20 @@
             <file>file:/D:/TABOGI/TA/web/Transaksi/tambahtender.jsp</file>
             <file>file:/D:/TABOGI/TA/src/java/com/TA/Dao/jenisBangunanDao.java</file>
             <file>file:/D:/TABOGI/TA/src/java/com/TA/models/cicilan.java</file>
+            <file>file:/D:/TABOGI/TA/src/java/Controllers/Dashboard.java</file>
+            <file>file:/D:/TABOGI/TA/web/Home.jsp</file>
             <file>file:/D:/TABOGI/TA/src/java/com/TA/Dao/tenderDao.java</file>
-            <file>file:/D:/TABOGI/TA/web/Login.jsp</file>
+            <file>file:/D:/TABOGI/TA/src/java/Controller/Transaksi/tenderController.java</file>
             <file>file:/D:/TABOGI/TA/src/java/Controllers/Masterdata/lokasiController.java</file>
             <file>file:/D:/TABOGI/TA/src/java/com/TA/Dao/impl/pelangganDaoImpl.java</file>
             <file>file:/D:/TABOGI/TA/src/java/com/test/Tender/testender.java</file>
-            <file>file:/D:/TABOGI/TA/src/java/Controllers/Masterdata/PelangganController.java</file>
-            <file>file:/D:/TABOGI/TA/web/login_gagal.jsp</file>
             <file>file:/D:/TABOGI/TA/src/java/Controllers/Masterdata/jenisBangunanController.java</file>
             <file>file:/D:/TABOGI/TA/src/java/com/TA/models/jenisBangunan.java</file>
             <file>file:/D:/TABOGI/TA/src/java/com/TA/test/jenisbangunan/testinsertjenisBangunan.java</file>
             <file>file:/D:/TABOGI/TA/web/MasterData/Jenisbangunan/jenisbangunanList.jsp</file>
             <file>file:/D:/TABOGI/TA/src/java/com/TA/Dao/impl/jenisBangunanDaoImpl.java</file>
             <file>file:/D:/TABOGI/TA/web/MasterData/Lokasi/lokasiList.jsp</file>
-            <file>file:/D:/TABOGI/TA/web/MasterData/Jenisbangunan/jenisbangunanedit.jsp</file>
             <file>file:/D:/TABOGI/TA/src/java/com/TA/models/tender.java</file>
-            <file>file:/D:/TABOGI/TA/src/java/com/TA/test/pelanggan/tesGetId.java</file>
             <file>file:/D:/TABOGI/TA/src/java/com/TA/Dao/impl/tenderDaoImpl.java</file>
         </group>
     </open-files>

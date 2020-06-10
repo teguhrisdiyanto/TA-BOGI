@@ -15,6 +15,7 @@ import com.TA.models.jenisBangunan;
 import com.TA.models.lokasi;
 import com.TA.models.pelanggan;
 import com.TA.models.tender;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -105,11 +106,14 @@ public class tenderController extends HttpServlet {
                         System.out.println("ini id coy  : " + id);
                           tender tn = new tender();
                           tn = tend.getbyid(id);
-                        request.setAttribute("tanggal", tn.getTender_tanggaltender());
+                          Gson gson = new Gson();
+                          
+                          System.out.println("ini json controller" + gson.toJson(tn));
+                        request.setAttribute("tanggal",AES.decrypt(tn.getTender_tanggaltender()));
                         request.setAttribute("namatender", AES.decrypt(tn.getTender_namatender()));
                         request.setAttribute("nilaikontrak", AES.decrypt(tn.getTender_nilaikontrak()));
                         request.setAttribute("nilaidp", AES.decrypt(tn.getTender_nilaidp()));
-                        request.setAttribute("alamat", AES.decrypt(tn.getTender_alamat()));
+                        request.setAttribute("sisabayar", AES.decrypt(tn.getSisabayar()));
                         request.setAttribute("namapelanggan", AES.decrypt(tn.getPelanggan().getPelanggan_nama()));
                         request.setAttribute("alamatpelanggan", AES.decrypt(tn.getPelanggan().getPelanggan_alamat()));
                         request.setAttribute("notlp", AES.decrypt(tn.getPelanggan().getPelanggan_nohp()));
@@ -179,14 +183,87 @@ public class tenderController extends HttpServlet {
                             String nama_pelanggan = request.getParameter("nama_pelanggan");
                             String jenis_bangunan = request.getParameter("jenis_bangunan");
                             String lokasi = request.getParameter("lokasi");
-                           String nilaikontrak = request.getParameter("nilaikontrak") ;
-                           String nilaidp = request.getParameter("nilaidp") ;
-                           String sisabayar = request.getParameter("sisabayar") ;
+                            String nilaikontrak = request.getParameter("nilaikontrak") ;
+                            String nilaidp = request.getParameter("nilaidp") ;
+                            String sisabayar = request.getParameter("sisabayar") ;
+                            String tanggaltender = request.getParameter("tanggalntender") ;
+                            tender Mten = new tender();
+                            tenderDaoImpl mtender = new tenderDaoImpl();
+                            int id_tender = mtender.autonumber(Mten);
+                                    
+                            Mten.setId_tender(id_tender);
+                            Mten.setId_pelangaan(Integer.parseInt(nama_pelanggan));
+                            Mten.setId_jenisbangun(Integer.parseInt(jenis_bangunan));
+                            Mten.setId_lokasi(Integer.parseInt(lokasi));
+                            Mten.setTender_tanggaltender(AES.encrypt(tanggaltender));
+                            Mten.setTender_namatender(AES.encrypt(namatender));
+                            Mten.setTender_nilaikontrak(AES.encrypt(nilaikontrak));
+                            Mten.setTender_nilaidp(AES.encrypt(nilaidp));
+                            Mten.setSisabayar(AES.encrypt(sisabayar));
+
+                            int status = mtender.insert(Mten);
+                            String Statusdata = null;
+
+                            if (status == 1){
+                                System.out.println("data berhasil di input");
+                                Statusdata = "00";
+                            }else{
+                                System.out.println("data gagal di input");
+                                 Statusdata = "01";
+                            }
+                            
+                         List<pelanggan> listpelsave;
+                         List<jenisBangunan> lisjensave;
+                         List<lokasi> listloksave;
+                         List<pelanggan> listpeldecrsave = new ArrayList<>();
+                         List<jenisBangunan> listjendecrsave = new ArrayList<>();
+                         List<lokasi> listlokdecrsave = new ArrayList<>();
+                          listpel = pel.getAll();
+                          lisjen = jenDao.getAll();
+                          listlok = lokDao.getAll();
+
+
+                                       for (pelanggan pl :listpel) {
+                                        pelanggan png = new pelanggan();
+                                           png.setId_pelanggan(pl.getId_pelanggan());              
+                                           png.setPelanggan_nama(AES.decrypt(pl.getPelanggan_nama()));
+
+                                       listpeldecrsave.add(png);
+                                       }
+                                       
+                                       
+                                       for (jenisBangunan je :lisjen) {
+                                        jenisBangunan jen = new jenisBangunan();
+                                           jen.setId_jenisbangun(je.getId_jenisbangun());              
+                                           jen.setJenisbangun_nama(AES.decrypt(je.getJenisbangun_nama()));
+
+                                       listjendecrsave.add(jen);
+                                       }
+                                       
+                                       for (lokasi lock : listlok) {
+                                       lokasi lok = new lokasi();
+                                           lok.setId_lokasi(lock.getId_lokasi());              
+                                           lok.setLokasi_namalokasi(AES.decrypt(lock.getLokasi_namalokasi()));
+
+                                       listlokdecrsave.add(lok);
+                                       }
+
+                         request.setAttribute("session", username);
+                         request.setAttribute("statusdata", Statusdata);
+                         request.setAttribute("page", "tambahtender");
+                         request.setAttribute("listpel", listpeldecrsave);
+                         request.setAttribute("listjen", listjendecrsave);
+                         request.setAttribute("listlok", listlokdecrsave);
+                         rd = request.getRequestDispatcher("Home.jsp");
+                         rd.forward(request, response);
+                           
                            
                            System.out.println(namatender);
                            System.out.println(nama_pelanggan);
                            System.out.println(jenis_bangunan);
                            System.out.println(lokasi);
+                           System.out.println(tanggaltender);
+                           System.out.println(nilaikontrak);
                            System.out.println(nilaidp);
                            System.out.println(sisabayar);
                         

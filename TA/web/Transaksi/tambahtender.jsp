@@ -72,7 +72,7 @@
                   <div class="col-sm-12">
                       
                         <select  name="nama_pelanggan" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                            
+                           
                  <%     
                      List<pelanggan> list;
                      list = listpel;
@@ -152,6 +152,22 @@
                   
                   
                 <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-4 control-label">Tanggal Tender</label>
+                    
+                  <div class="input-group input-group-sm">
+                  <div class="col-sm-12">
+                      <div class="input-group date">
+                      
+                       <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                    <input type="text" name ="tanggalntender" class="form-control pull-right" id="datepicker">
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                  
+                <div class="form-group">
                   <label for="inputPassword3" class="col-sm-4 control-label">Nilai Kontrak</label>
                     
                   <div class="input-group input-group-sm">
@@ -177,7 +193,7 @@
                     
                   <div class="input-group input-group-sm">
                   <div class="col-sm-12">
-                    <input type="text" class="form-control" name="sisabayar" id ="sisabayar" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required  onkeypress="return onlyNumberKey(event)"/>
+                    <input type="text" class="form-control" name="sisabayar" id ="sisabayar" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required readonly onkeypress="return onlyNumberKey(event)"/>
                   </div>
                   </div>
                 </div>
