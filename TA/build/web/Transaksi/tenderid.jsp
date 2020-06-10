@@ -121,7 +121,7 @@
        <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Detail Cicilan</h3>
+                    <h3 class="box-title">Cicilan</h3>
                       <br><br>
                       <!--pelanggan-->
               <div class="box-tools">
