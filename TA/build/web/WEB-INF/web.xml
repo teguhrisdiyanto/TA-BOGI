@@ -35,6 +35,10 @@
         <servlet-name>tenderController</servlet-name>
         <servlet-class>Controller.Transaksi.tenderController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>cicilanController</servlet-name>
+        <servlet-class>Controller.Transaksi.cicilanController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/LoginController</url-pattern>
@@ -66,6 +70,10 @@
     <servlet-mapping>
         <servlet-name>tenderController</servlet-name>
         <url-pattern>/tenderController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cicilanController</servlet-name>
+        <url-pattern>/cicilanController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

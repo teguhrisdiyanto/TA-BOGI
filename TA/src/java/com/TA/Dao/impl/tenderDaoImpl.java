@@ -75,24 +75,66 @@ public class tenderDaoImpl implements tenderDao<tender> {
 
     @Override
     public int update(tender object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+          PreparedStatement statement = null;
+        int Status = 0;
+         String UPDATE = "UPDATE _tender SET id_pelanggan = ?, id_jenisbangun = ?, _lokasi_id_lokasi= ?, tender_tanggaltender=? , tender_namatender=? WHERE id_tender= ?";
+        try{
+            statement = connection.prepareStatement(UPDATE);
+            statement.setInt(1, object.getId_pelangaan());
+            statement.setInt(2, object.getId_jenisbangun());
+            statement.setInt(3, object.getId_lokasi());
+            statement.setString(4, object.getTender_tanggaltender());
+            statement.setString(5, object.getTender_namatender());
+            statement.setInt(6, object.getId_tender());
+            statement.executeUpdate();
+            Status = 1;
+        }catch (Exception e){
+            e.printStackTrace();
+            Status = 0;
+        }finally{
+            try{
+                statement.close();
+            }catch (SQLException ex){
+            Logger.getLogger(tenderDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        }
+        return Status;
     }
 
     @Override
     public int delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            PreparedStatement statement = null;
+        String DELETE = "DELETE FROM _tender WHERE id_tender=?"; 
+        int Status = 0 ;
+        try{
+            statement = connection.prepareStatement(DELETE);
+            statement.setInt(1, id);
+            statement.executeUpdate();
+            Status = 1;
+        }catch(Exception e){
+          Status = 0;
+        }finally{
+         try{
+         statement.close();
+         }catch (SQLException ex){
+         Logger.getLogger(tenderDao.class.getName()).log(Level.SEVERE, null, ex);
+         }
+        }//To change body of generated methods, choose Tools | Templates.
+        return Status;
     }
 
     @Override
     public tender getbyid(int id) {
         PreparedStatement statement = null;
-        String byid = " select _tender.id_tender,_tender.tender_namatender, "
+        String byid = " select _tender.id_tender,_tender.tender_namatender,_pelanggan.id_pelanggan, _jenisbangun.id_jenisbangun,_lokasi.id_lokasi, "
                 + "_pelanggan.pelanggan_nama,_pelanggan.pelanggan_nohp,_pelanggan.pelanggan_email,"
                 + " _pelanggan.pelanggan_alamat,_pelanggan.pelanggan_pekerjaan, _lokasi.lokasi_namalokasi,"
                 + " _jenisbangun.jenisbangun_nama, _tender.tender_nilaikontrak, _tender.tender_nilaidp,_tender.sisabayar,"
                 + " _tender.tender_tanggaltender from _tender INNER JOIN _pelanggan ON _pelanggan.id_pelanggan = _tender.id_pelanggan"
                 + " INNER JOIN _lokasi ON _tender._lokasi_id_lokasi = _lokasi.id_lokasi INNER JOIN _jenisbangun ON _jenisbangun.id_jenisbangun "
                 + "= _tender.id_jenisbangun WHERE id_tender = '"+ id +"'";
+        
                // "SELECT *  FROM _tender T, _pelanggan P, _jenisbangun J, _lokasi L where id_tender = '" + id + "'";
        tender tn = new tender();
         try{
@@ -102,14 +144,12 @@ public class tenderDaoImpl implements tenderDao<tender> {
              ResultSet rs = statement.executeQuery();
              rs.next();
              tn.setId_tender(rs.getInt("id_tender"));
-//             tn.setId_pelangaan(rs.getInt("id_pelanggan"));
-//             tn.setId_jenisbangun(rs.getInt("id_jenisbangun"));
-//             tn.setId_lokasi(rs.getInt("_lokasi_id_lokasi"));
-             tn.setTender_namatender(rs.getString("tender_namatender"));
+             
+             
              
              
              pelanggan pl = new pelanggan();
-//             pl.setId_pelanggan(rs.getInt("id_pelanggan"));
+             pl.setId_pelanggan(rs.getInt("id_pelanggan"));
              pl.setPelanggan_nama(rs.getString("pelanggan_nama"));
              pl.setPelanggan_nohp(rs.getString("pelanggan_nohp"));
              pl.setPelanggan_email(rs.getString("pelanggan_email"));
@@ -118,25 +158,28 @@ public class tenderDaoImpl implements tenderDao<tender> {
              tn.setPelanggan(pl);
              
              
-            lokasi L = new lokasi();
-//            L.setId_lokasi(rs.getInt("lokasi_id_lokasi"));
-            L.setLokasi_namalokasi(rs.getString("lokasi_namalokasi"));
-            tn.setLokasi(L);
-             
-            jenisBangunan J = new jenisBangunan();
-//            J.setId_jenisbangun(rs.getInt("id_jenisbangun"));
+             jenisBangunan J = new jenisBangunan();
+            J.setId_jenisbangun(rs.getInt("id_jenisbangun"));
             J.setJenisbangun_nama(rs.getString("jenisbangun_nama"));
             tn.setJenis_Bangunan(J);
             
+             
+             
+            lokasi L = new lokasi();
+            L.setId_lokasi(rs.getInt("id_lokasi"));
+            L.setLokasi_namalokasi(rs.getString("lokasi_namalokasi"));
+            tn.setLokasi(L);
+            
+            
+            tn.setId_pelangaan(rs.getInt("id_pelanggan"));
+            tn.setId_jenisbangun(rs.getInt("id_jenisbangun"));
+            tn.setId_lokasi(rs.getInt("id_lokasi"));
+            tn.setTender_namatender(rs.getString("tender_namatender"));
             tn.setTender_nilaikontrak(rs.getString("tender_nilaikontrak"));
             tn.setTender_nilaidp(rs.getString("tender_nilaidp"));
             tn.setSisabayar(rs.getString("sisabayar"));
             tn.setTender_tanggaltender(rs.getString("tender_tanggaltender"));
-            
-            
-           
-             
-             
+ 
              rs.close();
              System.out.println("Ini List Member Yang Ada DI DAO uSER :" + gson.toJson(tn));
              return tn;
@@ -209,6 +252,32 @@ public class tenderDaoImpl implements tenderDao<tender> {
         
         }
         return list;
+    }
+
+    @Override
+    public int updatesisabayar(tender object) {
+                  PreparedStatement statement = null;
+        int Status = 0;
+         String UPDATE = "UPDATE _tender SET sisabayar = ? WHERE id_tender= ?";
+        try{
+            statement = connection.prepareStatement(UPDATE);
+            statement.setString(1, object.getSisabayar());
+            statement.setInt(2, object.getId_tender());
+            statement.executeUpdate();
+            Status = 1;
+        }catch (Exception e){
+            e.printStackTrace();
+            Status = 0;
+        }finally{
+            try{
+                statement.close();
+            }catch (SQLException ex){
+            Logger.getLogger(tenderDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        }
+        return Status;
+    
     }
     
 }

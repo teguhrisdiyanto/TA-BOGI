@@ -19,5 +19,5 @@ public interface cicilanDao<J> {
     public cicilan getbyid(int id);
     public int autonumber(J object);  
     
-    public List<J> getAll(String id);
+    public List<J> getAll(int id);
 }

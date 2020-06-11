@@ -161,17 +161,20 @@
                        <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                         </div>
-                    <input type="text" name ="tanggalntender" class="form-control pull-right" id="datepicker">
+                          <input type="text" name ="tanggalntender" class="form-control pull-right" id="datepicker" required="">
                     </div>
                   </div>
                   </div>
                 </div>
-                  
+                        
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-4 control-label">Nilai Kontrak</label>
                     
                   <div class="input-group input-group-sm">
+                      
                   <div class="col-sm-12">
+                      
+                      <h6 style="color:red;">* Harap isi dengan Teliti </h6>
                     <input type="text" class="form-control" name="nilaikontrak" id ="nilaikontrak" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required  onkeypress="return onlyNumberKey(event)"/>
                   </div>
                   </div>
@@ -182,6 +185,7 @@
                     
                   <div class="input-group input-group-sm">
                   <div class="col-sm-12">
+                      <h6 style="color:red;">* Harap isi dengan Teliti </h6>
                     <input type="text" class="form-control" name="nilaidp" id ="nilaidp" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required  onkeypress="return onlyNumberKey(event)"/>
                   </div>
                   </div>
@@ -204,7 +208,7 @@
               </div>
               <!-- /.box-body -->
               <div class="box-footer">           
-                  <button name="simpan" value="Simpan" id="simpankaryawan" class="btn btn-info ">Simpan</button>&nbsp
+                <button name="simpan" value="Simpan" id="simpankaryawan" class="btn btn-info  ">Simpan</button>&nbsp
                 <button type="reset" name="reset" value="Reset" class="btn btn-primary">Reset</button>&nbsp
               </div>
               <!-- /.box-footer -->

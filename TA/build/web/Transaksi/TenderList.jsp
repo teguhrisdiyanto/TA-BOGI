@@ -91,7 +91,8 @@
                   
                         <td>
                            <a href="tenderController?go=tender_detail&amp;tender_id=<%=id_tender%>">  <span class="label label-warning">Detail Tender</span> </a>
-                            <a href="Pelanggan?go=pelanggan_hapus&amp;pelanggan_id=<%=id_tender%>" class = "tombol-hapus" >  <span class="label label-danger" >Hapus</span> </a>
+                            <a href="tenderController?go=tender_edit&amp;tender_id=<%=id_tender%>">  <span class="label label-primary" >Edit</span> </a>
+                            <a href="tenderController?go=tender_delete&amp;tender_id=<%=id_tender%>" class="tombol-hapus">  <span class="label label-danger " >Hapus</span> </a>
                         </td>                                 
 
                 </tr>

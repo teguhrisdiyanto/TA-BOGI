@@ -8,6 +8,7 @@
             <file>file:/D:/TABOGI/TA/src/java/com/TA/test/pelanggan/testInsertpelanggan.java</file>
             <file>file:/D:/TABOGI/TA/src/java/com/TA/Dao/jenisBangunanDao.java</file>
             <file>file:/D:/TABOGI/TA/src/java/Controllers/Dashboard.java</file>
+            <file>file:/D:/TABOGI/TA/src/java/com/TA/Dao/impl/cicilanDaoImpl.java</file>
             <file>file:/D:/TABOGI/TA/src/java/com/TA/Dao/impl/pelangganDaoImpl.java</file>
             <file>file:/D:/TABOGI/TA/web/Transaksi/tenderid.jsp</file>
             <file>file:/D:/TABOGI/TA/src/java/com/test/Tender/testender.java</file>
@@ -22,6 +23,7 @@
             <file>file:/D:/TABOGI/TA/src/java/com/TA/Dao/tenderDao.java</file>
             <file>file:/D:/TABOGI/TA/src/java/Controller/Transaksi/tenderController.java</file>
             <file>file:/D:/TABOGI/TA/src/java/com/TA/Dao/impl/userDaoImpl.java</file>
+            <file>file:/D:/TABOGI/TA/src/java/Controller/Transaksi/cicilanController.java</file>
             <file>file:/D:/TABOGI/TA/src/java/Controllers/Masterdata/lokasiController.java</file>
             <file>file:/D:/TABOGI/TA/src/java/com/TA/models/jenisBangunan.java</file>
             <file>file:/D:/TABOGI/TA/src/java/com/TA/test/jenisbangunan/testinsertjenisBangunan.java</file>

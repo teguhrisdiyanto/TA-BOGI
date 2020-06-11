@@ -4,6 +4,8 @@
     Author     : Tri Bogi B
 --%>
 
+<%@page import="com.TA.models.cicilan"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.TA.models.tender"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -25,6 +27,7 @@
                       <br><br>
                       <!--pelanggan-->
                     <%String namapelanggan = (String)request.getAttribute("namapelanggan");%>
+                   <%String idpelanggan = (String)request.getAttribute("idpelanggan");%>
                     <%String alamatpelanggan = (String)request.getAttribute("alamatpelanggan");%>
                     <%String notlp = (String)request.getAttribute("notlp");%>
                     <%String emailpelanggan = (String)request.getAttribute("emailpelanggan");%>
@@ -32,15 +35,21 @@
                     
                     <!--tender-->
                     <%String tanggal = (String)request.getAttribute("tanggal");%>
+                    <%String notender = (String)request.getAttribute("idtender");%>
                     <%String namatender = (String)request.getAttribute("namatender");%>
                     <%String nilaikontrak = (String)request.getAttribute("nilaikontrak");%>
                     <%String nilaidp = (String)request.getAttribute("nilaidp");%>
                     <%String sisabayar = (String)request.getAttribute("sisabayar");%>
-                    
-                    
+                   
+                
+                    <%String id_jenisbangunan = (String)request.getAttribute("idjenisbanunan");%>
                     <%String jenisbangunan = (String)request.getAttribute("jenisbangunan");%>
+                    <%String id_lokasibangunan = (String)request.getAttribute("idlokasi");%>
                     <%String lokasibangunan = (String)request.getAttribute("lokasibangunan");%>
-                  
+                    
+                     <!--cicilan-->
+                
+                    <% ArrayList cicilanlist = (ArrayList)request.getAttribute("listcicilan"); %>
                     
                                  
                                             
@@ -128,11 +137,11 @@
                 <div class="input-group input-group-sm" style="width: 150px;">
               <% if(sisabayar.equals("0")){
                 
-            %> <button type="button" onclick="window.location.href='tenderController?go=tambah_tender'  "class="btn btn-block btn-primary btn-sm" disabled> <i class="fa fa-user-plus"></i> Input Cicilan</button>
+            %> <button type="button "class="btn btn-block btn-primary btn-sm" disabled data-toggle="modal" data-target="#modal-info" > <i class="fa fa-user-plus"></i> Input Cicilan</button>
                 
                 <%} else{
 
-                    %><button type="button" onclick="window.location.href='tenderController?go=tambah_tender'  "class="btn btn-block btn-primary btn-sm" > <i class="fa fa-user-plus"></i> Input Cicilan</button>
+                    %><button type="button  "class="btn btn-block btn-primary btn-sm" data-toggle="modal" data-target="#modal-info" > <i class="fa fa-user-plus"></i> Input Cicilan</button>
 
                <% }
 
@@ -147,49 +156,56 @@
                 <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
                 <tr>
-                   <th>ID Tender</th>
-                  <th>Nama Tender</th>
-                  <th>Nama Pelanggan</th>
-                  <th>Lokasi</th>
-                  <th>Jenis Bangunan</th>
+                   <th>ID cicilan</th>
+                  <th>Tanggal Cicilan</th>
+                  <th>Nominal Cicilan</th>
                   <th>Aksi</th>
                 </tr>
          <%
                        
-                        int  id_tender= 0;
-                        String nama_tender = null;
-                        String pelanggan_nama = null;
-                        String lokasi = null;
-                        String jenis_bangunan = null;
-                        String pelanggan_email = null;
+                        int  id_cicilan= 0;
+                        String cicilan_tanggal = null;
+                        String cicilan_nominal = null;
+                        int id_tender = 0;
+                        
 //                        String pelanggan_pekerjaan  = null;
 
                         try {
-                           
-                               
+                           int no = 0;
+                         List<cicilan> list;
+                          
+                           list = cicilanlist;
+                            for (cicilan cil : list) {
+                                no = no + 1;
+                                id_tender = cil.getId_tender();
+                                id_cicilan = cil.getId_cicilan();
+                                cicilan_tanggal = cil.getCicilan_tgl();
+                                cicilan_nominal = cil.getCicilan_nominal();
+                                id_tender = cil.getId_tender();
+                                
                                
                                 
 
                     %>
                     
-                  <td><%=id_tender%></td>
-                  <td><%=nama_tender%></td>
-                  <td><%=pelanggan_nama%></td>
-                  <td><%=lokasi %></td>
-                  <td><%=jenis_bangunan%></td>
+                  <td><%=no%></td>
+                  <td><%=cicilan_tanggal%></td>
+                  <td><%=cicilan_nominal%></td>
+                
+                  
                   
                  
                  
                   
                         <td>
-                           <a href="tenderController?go=tender_detail&amp;tender_id=<%=id_tender%>">  <span class="label label-warning">Detail Tender</span> </a>
-                            <a href="Pelanggan?go=pelanggan_hapus&amp;pelanggan_id=<%=id_tender%>" class = "tombol-hapus" >  <span class="label label-danger" >Hapus</span> </a>
+                           
+                            <a href="cicilanController?go=cicilan_hapus&amp;id_cicilan=<%=id_cicilan%>&amp;id_tender=<%=id_tender%>&amp;nominal=<%=cicilan_nominal%>&amp;sisabayar=<%=sisabayar%>" class = "tombol-hapus" >  <span class="label label-danger" >Hapus</span> </a>
                         </td>                                 
 
                 </tr>
 
                   <%
-                            
+                            }
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -197,7 +213,87 @@
               </table>
                     <!--<p>Total Karyawan = </p>-->
             </div>
-
+     <div class="modal modal-info fade" id="modal-info">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Input Cicilan</h4>
+              </div>
+          <form class="form-horizontal" id="form1" name="form1" method="post" action="cicilanController?go=cicilan_save">
+              <div class="modal-body">
+                  <input name="id_tender" type="hidden" value="<%= notender%>"/>
+                  <input name="id_pelanggan" type="hidden" value="<%= idpelanggan%>"/>
+                  <input name="id_jenisbangunan" type="hidden" value="<%= id_jenisbangunan%>"/>
+                  <input name="id_lokasi" type="hidden" value="<%= id_lokasibangunan%>"/>
+                 <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Tanggal Cicilan</label>
+                  
+                  <div class="input-group input-group-sm">
+                  <div class="col-sm-10">
+                     <span class="input-group-btn">
+                            <div class="input-group date">
+                      
+                       <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                                <input type="text" name ="tanggalcicilan" class="form-control pull-right" id="datepicker" required>
+                    </div>
+                    </span>
+                  </div>
+                  </div>
+                 
+                </div>
+                  
+                  
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">saldo awal</label>
+                  
+                  <div class="input-group input-group-sm">
+                  <div class="col-sm-10">
+                     <span class="input-group-btn">
+                         <input type="text" class="form-control" name="nilaikontrak" id ="nilaikontrak" size="40" maxlength="100" value=<%= sisabayar%> readonly required  onkeypress="return onlyNumberKey(event)"/>
+                     
+                    </span>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">cicilan</label>
+                  
+                  <div class="input-group input-group-sm">
+                  <div class="col-sm-10">
+                     <span class="input-group-btn">
+                         <input type="text" class="form-control" name="nilaidp" id ="nilaidp" size="40" maxlength="100"  required  onkeypress="return onlyNumberKey(event)"/>
+                     
+                    </span>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">saldo akhir</label>
+                  
+                  <div class="input-group input-group-sm">
+                  <div class="col-sm-10">
+                     <span class="input-group-btn">
+                         <input type="text" class="form-control" name="sisabayar" id ="sisabayar" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required readonly onkeypress="return onlyNumberKey(event)"/>
+                     
+                    </span>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-outline">Save changes</button>
+              </div>
+          </form>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
 
 
 

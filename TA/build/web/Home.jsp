@@ -253,6 +253,13 @@ else if (halaman.equals("tambahtender")) {
 <%@ include file="Transaksi/tambahtender.jsp"%>
 <% }
 
+else if (halaman.equals("edittender")) {
+%>
+
+<%@ include file="Transaksi/tenderedit.jsp"%>
+<% }
+
+
 %>
 
     <!-- /.content -->
