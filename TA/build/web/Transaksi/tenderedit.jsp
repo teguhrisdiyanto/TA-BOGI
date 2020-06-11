@@ -1,7 +1,7 @@
 <%-- 
-    Document   : tambahtender
-    Created on : Jun 6, 2020, 11:52:22 PM
-    Author     : Tri Bogi B
+    Document   : tenderedit
+    Created on : Jun 11, 2020, 7:52:00 AM
+    Author     : teguh
 --%>
 
 <%@page import="com.TA.models.lokasi"%>
@@ -27,14 +27,14 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Tambah Data Tender</h3>
+              <h3 class="box-title">Edit Data Tender</h3>
 
              
              </div>
 
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
-              <form class="form-horizontal" id="form1" name="form1" method="post" action="tenderController?go=tender_save">
+              <form class="form-horizontal" id="form1" name="form1" method="post" action="tenderController?go=tender_saveedit">
               <div class="box-body">
                <div class="alert alert-success alert-dismissible se-pre-conberhasil">
                        
@@ -50,7 +50,7 @@
                           DATA GAGAL DI INPUT
                         </div>
                   
-                  
+                  <input name="id_tender" type="hidden" value="${id_tender}"/>
                   
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-4 control-label">Nama Tender</label>
@@ -58,7 +58,7 @@
                   <div class="input-group input-group-sm">
                   <div class="col-sm-10">
                      <span class="input-group-btn">
-                         <input class="form-control" name="namatender"  id="kode" type="text"  size="50" maxlength="150" placeholder="Nama"  value="${namaKaryawan}" required />
+                         <input class="form-control" name="namatender"  id="kode" type="text"  size="50" maxlength="150" placeholder="Nama"  value="${namatender}" required />
                      
                     </span>
                   </div>
@@ -91,6 +91,7 @@
                             <%
                             }
                     %>
+                    <option selected="selected" value="${id_pelanggan}">${namapelanggan}</option>
                         </select>
                   </div>
                   </div>
@@ -117,6 +118,7 @@
                             <%
                             }
                     %>
+                    <option selected="selected" value="${id_jenisbangun}">${jenisbangunan}</option>
                         </select>
                       
                       
@@ -145,6 +147,7 @@
                             <%
                             }
                     %>
+                    <option selected="selected" value="${id_lokasi}">${lokasibangunan}</option>
                         </select>
                   </div>
                   </div>
@@ -161,20 +164,17 @@
                        <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                         </div>
-                          <input type="text" name ="tanggalntender" class="form-control pull-right" id="datepicker" required="">
+                    <input type="text" value="${tanggal}" name ="tanggalntender" class="form-control pull-right" id="datepicker">
                     </div>
                   </div>
                   </div>
                 </div>
-                        
-                <div class="form-group">
+                  
+<!--                <div class="form-group">
                   <label for="inputPassword3" class="col-sm-4 control-label">Nilai Kontrak</label>
                     
                   <div class="input-group input-group-sm">
-                      
                   <div class="col-sm-12">
-                      
-                      <h6 style="color:red;">* Harap isi dengan Teliti </h6>
                     <input type="text" class="form-control" name="nilaikontrak" id ="nilaikontrak" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required  onkeypress="return onlyNumberKey(event)"/>
                   </div>
                   </div>
@@ -185,7 +185,6 @@
                     
                   <div class="input-group input-group-sm">
                   <div class="col-sm-12">
-                      <h6 style="color:red;">* Harap isi dengan Teliti </h6>
                     <input type="text" class="form-control" name="nilaidp" id ="nilaidp" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required  onkeypress="return onlyNumberKey(event)"/>
                   </div>
                   </div>
@@ -200,7 +199,7 @@
                     <input type="text" class="form-control" name="sisabayar" id ="sisabayar" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required readonly onkeypress="return onlyNumberKey(event)"/>
                   </div>
                   </div>
-                </div>
+                </div>-->
      
      
               
@@ -208,7 +207,7 @@
               </div>
               <!-- /.box-body -->
               <div class="box-footer">           
-                <button name="simpan" value="Simpan" id="simpankaryawan" class="btn btn-info  ">Simpan</button>&nbsp
+                  <button name="simpan" value="Simpan" id="simpankaryawan" class="btn btn-info ">Simpan</button>&nbsp
                 <button type="reset" name="reset" value="Reset" class="btn btn-primary">Reset</button>&nbsp
               </div>
               <!-- /.box-footer -->

@@ -10,15 +10,42 @@ package com.TA.models;
  * @author Tri Bogi B
  */
 public class tender {
-    private  int id_tender;
+    private int id_tender;
+    private int id_pelangaan;
+    private int id_jenisbangun;
+    private int id_lokasi;
     private pelanggan Pelanggan;
     private jenisBangunan Jenis_Bangunan;
     private lokasi Lokasi;
-    private long tender_tanggaltender;
+    private String tender_tanggaltender;
     private String tender_namatender;
     private String tender_nilaikontrak;
     private String tender_nilaidp ;
-    private String tender_alamat;
+    private String sisabayar;
+
+    public int getId_pelangaan() {
+        return id_pelangaan;
+    }
+
+    public void setId_pelangaan(int id_pelangaan) {
+        this.id_pelangaan = id_pelangaan;
+    }
+
+    public int getId_jenisbangun() {
+        return id_jenisbangun;
+    }
+
+    public void setId_jenisbangun(int id_jenisbangun) {
+        this.id_jenisbangun = id_jenisbangun;
+    }
+
+    public int getId_lokasi() {
+        return id_lokasi;
+    }
+
+    public void setId_lokasi(int id_lokasi) {
+        this.id_lokasi = id_lokasi;
+    }
 
     public int getId_tender() {
         return id_tender;
@@ -52,13 +79,15 @@ public class tender {
         this.Lokasi = Lokasi;
     }
 
-    public long getTender_tanggaltender() {
+    public String getTender_tanggaltender() {
         return tender_tanggaltender;
     }
 
-    public void setTender_tanggaltender(long tender_tanggaltender) {
+    public void setTender_tanggaltender(String tender_tanggaltender) {
         this.tender_tanggaltender = tender_tanggaltender;
     }
+
+ 
 
     public String getTender_namatender() {
         return tender_namatender;
@@ -84,13 +113,15 @@ public class tender {
         this.tender_nilaidp = tender_nilaidp;
     }
 
-    public String getTender_alamat() {
-        return tender_alamat;
+    public String getSisabayar() {
+        return sisabayar;
     }
 
-    public void setTender_alamat(String tender_alamat) {
-        this.tender_alamat = tender_alamat;
+    public void setSisabayar(String sisabayar) {
+        this.sisabayar = sisabayar;
     }
+
+
     
     
 }

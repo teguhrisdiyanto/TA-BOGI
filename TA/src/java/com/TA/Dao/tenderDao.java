@@ -15,8 +15,10 @@ import java.util.List;
 public interface tenderDao <TD> {
     public int insert(TD object);
     public int update (TD object);
+     public int updatesisabayar (TD object);
     public int delete (int id);
     public tender getbyid(int id);
+  
     public int autonumber(TD object);  
     
     public List<TD> getAll();
