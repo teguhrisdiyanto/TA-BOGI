@@ -175,7 +175,7 @@
                   <div class="col-sm-12">
                       
                       <h6 style="color:red;">* Harap isi dengan Teliti </h6>
-                    <input type="text" class="form-control" name="nilaikontrak" id ="nilaikontrak" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required  onkeypress="return onlyNumberKey(event)"/>
+                    <input type="text" class="form-control" name="nilaikontrak" id ="nilaikontrak" size="40" maxlength="100" value="${noTlp}" placeholder="Nilai Kontrak" required  onkeypress="return onlyNumberKey(event)"/>
                   </div>
                   </div>
                 </div>
@@ -186,7 +186,7 @@
                   <div class="input-group input-group-sm">
                   <div class="col-sm-12">
                       <h6 style="color:red;">* Harap isi dengan Teliti </h6>
-                    <input type="text" class="form-control" name="nilaidp" id ="nilaidp" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required  onkeypress="return onlyNumberKey(event)"/>
+                    <input type="text" class="form-control" name="nilaidp" id ="nilaidp" size="40" maxlength="100" value="${noTlp}" placeholder="Nilai DP" required  onkeypress="return onlyNumberKey(event)"/>
                   </div>
                   </div>
                 </div>
@@ -197,7 +197,7 @@
                     
                   <div class="input-group input-group-sm">
                   <div class="col-sm-12">
-                    <input type="text" class="form-control" name="sisabayar" id ="sisabayar" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required readonly onkeypress="return onlyNumberKey(event)"/>
+                    <input type="text" class="form-control" name="sisabayar" id ="sisabayar" size="40" maxlength="100" value="${noTlp}" placeholder="Sisa Bayar" required readonly onkeypress="return onlyNumberKey(event)"/>
                   </div>
                   </div>
                 </div>

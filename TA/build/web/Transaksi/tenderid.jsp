@@ -67,8 +67,8 @@
             </div>
             <div class="box-footer no-padding">
               <ul class="nav nav-stacked">
-                <li><a href="#">No Tlp<span class="pull-right "><%= notlp%></span></a></li>
-                <li><a href="#">Emailpelanggan <span class="pull-right"><%= emailpelanggan%></span></a></li>
+                <li><a href="#">No Telepon<span class="pull-right "><%= notlp%></span></a></li>
+                <li><a href="#">Email Pelanggan <span class="pull-right"><%= emailpelanggan%></span></a></li>
                 <li><a href="#">Pekerjaan <span class="pull-right "><%= pekerjaan%></span></a></li>
                 <li><a href="#">Alamat <span class="pull-right "><%= alamatpelanggan%></span></a></li>
               </ul>
@@ -84,11 +84,11 @@
               </div>
               <!-- /.widget-user-image -->
               <h3 class="widget-user-username">Data Tender </h3>
-            <h5 class="widget-user-desc">Nama Tender: <%= namatender%></h5>
+            <h5 class="widget-user-desc">Nama Tender : <%= namatender%></h5>
             </div>
             <div class="box-footer no-padding">
               <ul class="nav nav-stacked">
-                <li><a href="#">Tanggaln Tender <span class="pull-right"><%= tanggal%></span></a></li>
+                <li><a href="#">Tanggal Tender <span class="pull-right"><%= tanggal%></span></a></li>
                 <!--<li><a href="#">Nama Tender <span class="pull-right "><%= namatender%></span></a></li>-->
                 <li><a href="#">Jenis Bangunan <span class="pull-right "><%= jenisbangunan%></span></a></li>
                 <li><a href="#">Nilai Kontrak <span class="pull-right ">Rp.<%= nilaikontrak%></span></a></li>
@@ -253,7 +253,7 @@
                   <div class="input-group input-group-sm">
                   <div class="col-sm-10">
                      <span class="input-group-btn">
-                         <input type="text" class="form-control" name="nilaikontrak" id ="nilaikontrak" size="40" maxlength="100" value=<%= sisabayar%> readonly required  onkeypress="return onlyNumberKey(event)"/>
+                         <input type="number" class="form-control" name="nilaikontrak" id ="nilaikontrak" size="40" maxlength="100" value=<%= sisabayar%> readonly required  onkeypress="return onlyNumberKey(event)"/>
                      
                     </span>
                   </div>
@@ -265,7 +265,7 @@
                   <div class="input-group input-group-sm">
                   <div class="col-sm-10">
                      <span class="input-group-btn">
-                         <input type="text" class="form-control" name="nilaidp" id ="nilaidp" size="40" maxlength="100"  required  onkeypress="return onlyNumberKey(event)"/>
+                         <input type="number" class="form-control" name="nilaidp" id ="nilaidp" size="40" maxlength="100"  required  onkeypress="return onlyNumberKey(event)"/>
                      
                     </span>
                   </div>
@@ -285,8 +285,8 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-outline">Save changes</button>
+                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">KELUAR</button>
+                <button type="submit" class="btn btn-outline">SIMPAN</button>
               </div>
           </form>
             </div>

@@ -54,7 +54,7 @@
                   <div class="input-group input-group-sm">
                   <div class="col-sm-10">
                      <span class="input-group-btn">
-                         <input class="form-control" name="lokasibangunan"  id="kode" type="text"  size="50" maxlength="125" placeholder="Lokasi"  value="${lokasibangunan}" required />
+                         <input class="form-control" name="lokasibangunan"  id="kode" type="text"  size="50" maxlength="200" placeholder="Lokasi"  value="${lokasibangunan}" required />
                      
                     </span>
                   </div>
