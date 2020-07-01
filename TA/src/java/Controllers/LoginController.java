@@ -6,6 +6,7 @@
 package Controllers;
 
 import com.TA.Dao.impl.userDaoImpl;
+import com.TA.enkripsi.AES;
 import com.TA.models.users;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -50,7 +51,7 @@ public class LoginController extends HttpServlet {
             
              if(Username.equals(getUser)){
                 getUser = usr.getUserame();
-                String pwd = usr.getPassword();
+                String pwd = AES.decrypt(usr.getPassword());
                     if(password.equals(pwd)){
                 request.getSession().setAttribute("username", getUser);
 //                request.getSession().setAttribute("token", RESPONSE.getToken());

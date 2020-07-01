@@ -109,7 +109,7 @@
               <!-- /.box-body -->
               <div class="box-footer">           
                   <button name="simpan" value="Simpan" id="simpankaryawan" class="btn btn-info ">Simpan</button>&nbsp
-                <button type="reset" name="reset" value="Reset" class="btn btn-primary">Reset</button>&nbsp
+                
               </div>
               <!-- /.box-footer -->
             </form>

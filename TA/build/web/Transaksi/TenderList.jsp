@@ -34,7 +34,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Data Pelanggan</h3>
+              <h3 class="box-title">Data Tender</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -91,7 +91,7 @@
                   
                         <td>
                            <a href="tenderController?go=tender_detail&amp;tender_id=<%=id_tender%>">  <span class="label label-warning">Detail Tender</span> </a>
-                            <a href="tenderController?go=tender_edit&amp;tender_id=<%=id_tender%>">  <span class="label label-primary" >Edit</span> </a>
+                            <a href="tenderController?go=tender_edit&amp;tender_id=<%=id_tender%>">  <span class="label label-primary" >Rubah</span> </a>
                             <a href="tenderController?go=tender_delete&amp;tender_id=<%=id_tender%>" class="tombol-hapus">  <span class="label label-danger " >Hapus</span> </a>
                         </td>                                 
 

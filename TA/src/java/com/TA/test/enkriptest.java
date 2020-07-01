@@ -16,7 +16,7 @@ public class enkriptest {
     
     
     public static void main(String [] args){
-    String a = "test";
+    String a = "12345";
         System.out.println(AES.encrypt(a));
     
     }

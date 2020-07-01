@@ -54,7 +54,7 @@
                   <div class="input-group input-group-sm">
                   <div class="col-sm-10">
                      <span class="input-group-btn">
-                         <input class="form-control" name="Jenisbangunan"  id="kode" type="text"  size="50" maxlength="25" placeholder="Lokasi"  value="${jenisbangunan}" required />
+                         <input class="form-control" name="Jenisbangunan"  id="kode" type="text"  size="50" maxlength="200" placeholder="Lokasi"  value="${jenisbangunan}" required />
                      
                     </span>
                   </div>
@@ -68,7 +68,6 @@
               <!-- /.box-body -->
               <div class="box-footer">           
                   <button name="simpan" value="Simpan" id="simpankaryawan" class="btn btn-info ">Simpan</button>&nbsp
-                <button type="reset" name="reset" value="Reset" class="btn btn-primary">Reset</button>&nbsp
               </div>
               <!-- /.box-footer -->
             </form>

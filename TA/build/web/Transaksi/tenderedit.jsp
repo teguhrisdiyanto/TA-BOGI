@@ -40,14 +40,14 @@
                        
                           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                           <h4><i class="icon fa fa-check"></i> Selamat !</h4>
-                         Data Telah berhasil Di Input
+                         Data Telah berhasil Di Edit
                          
                         </div>
                   
                    <div class="alert alert-danger alert-dismissible se-pre-congagal">
                           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                           <h4><i class="icon fa fa-check"></i> Peringatan !</h4>
-                          DATA GAGAL DI INPUT
+                          DATA GAGAL DI EDIT
                         </div>
                   
                   <input name="id_tender" type="hidden" value="${id_tender}"/>
@@ -208,7 +208,7 @@
               <!-- /.box-body -->
               <div class="box-footer">           
                   <button name="simpan" value="Simpan" id="simpankaryawan" class="btn btn-info ">Simpan</button>&nbsp
-                <button type="reset" name="reset" value="Reset" class="btn btn-primary">Reset</button>&nbsp
+                
               </div>
               <!-- /.box-footer -->
             </form>
