@@ -277,7 +277,7 @@
                   <div class="input-group input-group-sm">
                   <div class="col-sm-10">
                      <span class="input-group-btn">
-                         <input type="text" class="form-control" name="sisabayar" id ="sisabayar" size="40" maxlength="100" value="${noTlp}" placeholder="Pekerjaan" required readonly onkeypress="return onlyNumberKey(event)"/>
+                         <input type="text" class="form-control" name="sisabayar" id ="sisabayar" size="40" maxlength="100" value="${noTlp}" placeholder="saldo Akhir" required readonly onkeypress="return onlyNumberKey(event)"/>
                      
                     </span>
                   </div>

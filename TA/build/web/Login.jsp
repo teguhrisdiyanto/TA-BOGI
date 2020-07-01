@@ -53,7 +53,7 @@
         <input type="password" class="form-control"  name="password" placeholder="Password" required>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
-      <div class="row">
+      <div class="row"> 
 
         <!-- /.col -->
         <div class="col-xs-4">
