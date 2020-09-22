@@ -159,7 +159,7 @@ public class jenisBangunanController extends HttpServlet {
                         
                        request.setAttribute("session", username);
                        request.setAttribute("statusdata", Statusdata);
-                       request.setAttribute("page", "jenisbangunanadd");
+                       request.setAttribute("page", "jenisbangunananedit");
                        rd = request.getRequestDispatcher("Home.jsp");
                        rd.forward(request, response);
                        

@@ -12,6 +12,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>CV PANDU PUTRA SARANA</title>
+  <link rel="icon" type="image/png" href="aset/logo.png">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -88,13 +89,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="Admun.JPG" class="user-image" alt="User Image">
+              <img src="aset/logo.png" class="user-image" alt="User Image">
               <span class="hidden-xs"><%=username%></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="Admun.JPG" class="img-circle" alt="User Image">
+                <img src="aset/logo.png" class="img-circle" alt="User Image">
 
                 <p>
                   Tri Bogi Banjaransari - Risk Engineer
@@ -104,7 +105,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Tambah User</a>
+<!--                  <a href="#" class="btn btn-default btn-flat">Tambah User</a>-->
                 </div>
                 <div class="pull-right">
                   <a href="Logout" class="btn btn-default btn-flat">Keluar</a>
